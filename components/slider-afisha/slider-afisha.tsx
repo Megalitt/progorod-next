@@ -12,6 +12,7 @@ import { apiGetAfishaForMainPage } from '../../services/afisha';
 
 const SliderAfisha: React.FC = React.memo(() => {
   const [afishaData, setAfishaData] = useState([]);
+  const [renderSlider, setRenderSlider] = useState(false);
   const settings = {
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -36,6 +37,10 @@ const SliderAfisha: React.FC = React.memo(() => {
     setTimeout(() => {
       apiGetAfishaForMainPage().then((data) => setAfishaData(data));
     }, 0);
+
+    setTimeout(() => {
+      setRenderSlider(true);
+    }, 50);
   }, []);
 
   return (
@@ -48,9 +53,11 @@ const SliderAfisha: React.FC = React.memo(() => {
         </a>
       </Link>
       <div className={styles.concursSliderWrap}>
-        <Slider {...settings}>
-          {afishaData.map((item) => <AfishaSliderItem key={`afisha-item-${item.id}`} {...item} />)}
-        </Slider>
+        {afishaData.length > 0 && renderSlider && (
+          <Slider {...settings}>
+            {afishaData.map((item) => <AfishaSliderItem key={`afisha-item-${item.id}`} {...item} />)}
+          </Slider>
+        )}
       </div>
     </article>
   );

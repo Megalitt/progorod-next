@@ -12,6 +12,7 @@ import styles from './slider-concurs.module.scss';
 
 const SliderConcurs: React.FC = React.memo(() => {
   const [concursData, setConcursData] = useState([]);
+  const [renderSlider, setRenderSlider] = useState(false);
   const settings = {
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -37,6 +38,10 @@ const SliderConcurs: React.FC = React.memo(() => {
       // @ts-ignore
       apiGetPhotoConcurs().then((data) => setConcursData(data?.data));
     }, 0);
+
+    setTimeout(() => {
+      setRenderSlider(true);
+    }, 50);
   }, []);
 
   return (
@@ -49,9 +54,11 @@ const SliderConcurs: React.FC = React.memo(() => {
         </a>
       </Link>
       <div className={styles.concursSliderWrap}>
-        <Slider {...settings}>
-          {concursData && Array.isArray(concursData) && concursData.map((item) => <ConcursSliderItem key={`concurs-item-${item.id}`} {...item} />)}
-        </Slider>
+        {concursData.length > 0 && renderSlider && (
+          <Slider {...settings}>
+            {concursData && Array.isArray(concursData) && concursData.map((item) => <ConcursSliderItem key={`concurs-item-${item.id}`} {...item} />)}
+          </Slider>
+        )}
       </div>
     </article>
   );

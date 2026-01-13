@@ -12,6 +12,7 @@ import { apiGetFaqSortByTime } from '../../services/faq';
 
 const SliderFaq: React.FC = React.memo(() => {
   const [faqData, setFaqData] = useState([]);
+  const [renderSlider, setRenderSlider] = useState(false);
   const settings = {
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -36,6 +37,10 @@ const SliderFaq: React.FC = React.memo(() => {
     setTimeout(() => {
       apiGetFaqSortByTime().then(({ data }: any) => setFaqData(data));
     }, 0);
+
+    setTimeout(() => {
+      setRenderSlider(true);
+    }, 50);
   }, []);
 
   return (
@@ -48,11 +53,13 @@ const SliderFaq: React.FC = React.memo(() => {
         </a>
       </Link>
       <div className={styles.questionWrp}>
-        <Slider {...settings}>
-          {
-            faqData && faqData.map((item) => <QuestionItem {...item} key={`faq-id-${item.id}`} />)
-          }
-        </Slider>
+        {faqData.length > 0 && renderSlider && (
+          <Slider {...settings}>
+            {
+              faqData && faqData.map((item) => <QuestionItem {...item} key={`faq-id-${item.id}`} />)
+            }
+          </Slider>
+          )}
       </div>
     </article>
   );

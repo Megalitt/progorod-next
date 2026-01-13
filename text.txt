@@ -1,50 +1,39 @@
-b.provotorov-23078_banners_fixed_height
-b.provotorov-23078_banners_fixed_height_next15
+git clone (git@gitlab.srv43.ru:kseniya/pg-adapted.git) - адрес (newprogorod-react) - имя папки назначения // клонировать репозиторий
+git clone http://Shastin@gitlab.srv43.ru/b.provotorov/progorod-admin.git progorod-admin
+git checkout -b (имя ветки) // Создайте ветку способ 1
+git switch -c (имя ветки) // Создайте ветку способ 2
+git add .
+git commit -m "My commit message" // Фиксация локально
+git commit --amend -m "My commit message" // Измените предыдущий коммит
+git push origin (имя ветки) // отправка ветки в GitLab
+git merge имя ветки --no-ff // команда для слияния
+git branch // какие ветки доступны и как называется текущая ветка
+git reset // откат назад на один коммит
+git fetch // связывается с удалённым репозиторием и забирает из него все изменения
+git pull origin (имя ветки)// работает как комбинация команд git fetch и git merge, т. е. Git вначале забирает изменения из указанного удалённого репозитория, а затем пытается слить их с текущей веткой.
+git log --all // получит все ветки
+git switch (имя ветки) // переключения между ветками
+git status
+
+npm install --legacy-peer-deps
+
+git reset HEAD~ # удаляем только коммит
+git reset --hard HEAD~ # удаляем коммит и изменения
+
+git revert aa600a43cb164408e4ad87d216bc679d097f1a6c
+# нужно передать ей хеш коммита, который мы отменяем
+git branch -d <имя_ветки> удалить ветку
+
 b.provotorov-22715_npm_update
-amp/37742
 
+Идентификация конфликтов:
+После git merge или git pull, Git сообщит о конфликтах.
+Выполните git status, чтобы увидеть список файлов, в которых возникли конфликты.
 
-
-    width: 135px;
-    height: 35px;
-
-Проверка ошибок typescript без старта проекта npx tsc --noEmit --project .
-
-b.provotorov-23295_pagespeed_error_analysis_next15
-
-GK | Уменьшить css файл, блокирующий отрисовку страницы
-http://otdel.srv43.ru/products/projects/tasks.aspx?prjID=76&id=23402
-
-PG | Ошибки при анализе в PageSpeed Insights — принудительная компоновка и неиспользуемый код
-http://otdel.srv43.ru/products/projects/tasks.aspx?prjID=2&id=23295
-Сейчас в отчете "Удалите неиспользуемый код JavaScript Ожидаемая экономия – 25 КиБ"
-
-PG | оптимизация фронта на ошибки js
-http://otdel.srv43.ru/products/projects/tasks.aspx?prjID=2&id=23043
-
-1. использования устаревшего кода js и его вырезки из проекта
-2. загрузки неиспользуемых скриптов js и их исключения по части лишней загрузки
-
-==================== Отслеживать ==================================
-Фиксировать размеры блоков
-http://otdel.srv43.ru/products/projects/tasks.aspx?prjID=2&id=23078
-
-PG | Загрузка файла favicon
-http://otdel.srv43.ru/products/projects/tasks.aspx?prjID=2&id=23452
-
-Перевести сайт https://ko44.ru/ с платформы ГК на платформу ПГ
-http://otdel.srv43.ru/products/projects/tasks.aspx?prjID=78&id=23447
-
-Переезд сайтов на H15
-http://otdel.srv43.ru/products/projects/tasks.aspx?prjID=7&id=23361
-
-progoroduhta.ru/конкурс
-http://otdel.srv43.ru/products/projects/tasks.aspx?prjID=35&id=23425
-
-Ошибка на AMP-странице материала
-http://otdel.srv43.ru/products/projects/tasks.aspx?prjID=90&id=23428
-
-shastin-23295_pagespeed_error_analysis_next15
+Принять обновления из ветки
+git checkout ваша-ветка
+git fetch origin <master>
+git merge <master>
 
 
 

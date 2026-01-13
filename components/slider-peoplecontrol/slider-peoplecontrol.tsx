@@ -15,6 +15,7 @@ const SliderPeoplecontrol: React.FC = React.memo(() => {
   const [isLoading, setIsLoadingFlag] = useState(false);
   const [isMounted, setIsMountedFlag] = useState(true);
   const [complaintData, setComplaintData] = useState([]);
+  const [renderSlider, setRenderSlider] = useState(false);
   const settings = {
     slidesToShow: 2,
     slidesToScroll: 2,
@@ -49,6 +50,10 @@ const SliderPeoplecontrol: React.FC = React.memo(() => {
   useEffect(() => {
     if (isMounted) setTimeout(fetchingData, 0);
 
+    setTimeout(() => {
+      setRenderSlider(true);
+    }, 50);
+
     return () => setIsMountedFlag(false);
   }, []);
 
@@ -66,9 +71,11 @@ const SliderPeoplecontrol: React.FC = React.memo(() => {
         </a>
       </Link>
       <div className={styles.posterWrap}>
-        <Slider {...settings}>
-          {complaintData.map((item) => <PosterItem key={`poster-item-${item.id}`} text={item.text} id={item.id} />)}
-        </Slider>
+        {complaintData.length > 0 && renderSlider && (
+          <Slider {...settings}>
+            {complaintData.map((item) => <PosterItem key={`poster-item-${item.id}`} text={item.text} id={item.id} />)}
+          </Slider>
+        )}
       </div>
     </article>
   );
