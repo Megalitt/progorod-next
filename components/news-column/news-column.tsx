@@ -69,10 +69,6 @@ const NewsColumn: React.FC<Props> = React.memo(({
         setTimeout(() => {
           observer.unobserve(currentElement);
         }, 0);
-
-        if (totalPositionElement > refColRight.current.parentNode.parentNode.clientHeight - 60) {
-          currentElement.style.display = 'none';
-        }
       }
     }
     setLoaded(true);
