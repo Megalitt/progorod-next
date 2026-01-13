@@ -56,7 +56,20 @@ const NewsColumn: React.FC<Props> = React.memo(({
         const currentElement = refColRight.current.children[i];
         currentElement.style.display = 'block';
 
-        totalPositionElement += currentElement.getBoundingClientRect().bottom - currentElement.getBoundingClientRect().top;
+        const observer = new ResizeObserver((entries) => {
+          const {bottom, top} = entries[0].contentRect;
+
+          totalPositionElement += bottom - top;
+          if (totalPositionElement > refColRight.current.parentNode.parentNode.clientHeight - 60) {
+          currentElement.style.display = 'none';
+        }
+        });
+        observer.observe(currentElement);
+  
+        setTimeout(() => {
+          observer.unobserve(currentElement);
+        }, 0);
+
         if (totalPositionElement > refColRight.current.parentNode.parentNode.clientHeight - 60) {
           currentElement.style.display = 'none';
         }

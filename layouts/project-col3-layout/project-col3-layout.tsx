@@ -39,7 +39,15 @@ const ProjectCol3Layout: React.FC<Props> = React.memo(({
   useEffect(() => {
     if (!isMobile && !scroll) {
       const onSetClientHeight = () => {
-        dispatch(setColCenterHeight(measuredRef && measuredRef.current && measuredRef.current.getBoundingClientRect().height));
+        const observer = new ResizeObserver((entries) => {
+          const {height} = entries[0].contentRect;
+          dispatch(setColCenterHeight(measuredRef && measuredRef.current && height));
+        });
+        observer.observe(measuredRef.current);
+  
+        setTimeout(() => {
+          observer.unobserve(measuredRef.current);
+        }, 0);
       };
 
       onSetClientHeight();
