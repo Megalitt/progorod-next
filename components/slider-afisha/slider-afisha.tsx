@@ -40,7 +40,7 @@ const SliderAfisha: React.FC = React.memo(() => {
 
     setTimeout(() => {
       setRenderSlider(true);
-    }, 50);
+    }, 20);
   }, []);
 
   return (
@@ -53,7 +53,7 @@ const SliderAfisha: React.FC = React.memo(() => {
         </a>
       </Link>
       <div className={styles.concursSliderWrap}>
-        {afishaData.length > 0 && renderSlider && (
+        {renderSlider && (
           <Slider {...settings}>
             {afishaData.map((item) => <AfishaSliderItem key={`afisha-item-${item.id}`} {...item} />)}
           </Slider>

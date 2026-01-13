@@ -52,7 +52,7 @@ const SliderPeoplecontrol: React.FC = React.memo(() => {
 
     setTimeout(() => {
       setRenderSlider(true);
-    }, 50);
+    }, 20);
 
     return () => setIsMountedFlag(false);
   }, []);
@@ -71,7 +71,7 @@ const SliderPeoplecontrol: React.FC = React.memo(() => {
         </a>
       </Link>
       <div className={styles.posterWrap}>
-        {complaintData.length > 0 && renderSlider && (
+        {renderSlider && (
           <Slider {...settings}>
             {complaintData.map((item) => <PosterItem key={`poster-item-${item.id}`} text={item.text} id={item.id} />)}
           </Slider>

@@ -40,7 +40,7 @@ const SliderFaq: React.FC = React.memo(() => {
 
     setTimeout(() => {
       setRenderSlider(true);
-    }, 50);
+    }, 20);
   }, []);
 
   return (
@@ -53,7 +53,7 @@ const SliderFaq: React.FC = React.memo(() => {
         </a>
       </Link>
       <div className={styles.questionWrp}>
-        {faqData.length > 0 && renderSlider && (
+        {renderSlider && (
           <Slider {...settings}>
             {
               faqData && faqData.map((item) => <QuestionItem {...item} key={`faq-id-${item.id}`} />)

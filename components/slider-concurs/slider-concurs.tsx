@@ -41,7 +41,7 @@ const SliderConcurs: React.FC = React.memo(() => {
 
     setTimeout(() => {
       setRenderSlider(true);
-    }, 50);
+    }, 20);
   }, []);
 
   return (
@@ -54,7 +54,7 @@ const SliderConcurs: React.FC = React.memo(() => {
         </a>
       </Link>
       <div className={styles.concursSliderWrap}>
-        {concursData.length > 0 && renderSlider && (
+        {renderSlider && (
           <Slider {...settings}>
             {concursData && Array.isArray(concursData) && concursData.map((item) => <ConcursSliderItem key={`concurs-item-${item.id}`} {...item} />)}
           </Slider>
