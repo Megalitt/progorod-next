@@ -1,0 +1,86 @@
+@import '../../../../styles/media';
+
+.complain {
+    font-size: 18px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: -40px -40px 0;
+    padding: 40px 40px 35px;
+    background-color: #FFF;
+    position: relative;
+    
+    &::before {
+        content: "";
+        position: absolute;
+        height: 25px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--light-back);
+        z-index: -1;
+    }
+    
+    &Answer {
+        margin: 0 -40px;
+        background-color: var(--light-back);
+        border-radius: 0;
+        padding-bottom: 14px;
+        
+        .complainWrap {
+            background-color: #FFF;
+            margin: -40px -26px 0;
+            padding: 30px 26px 30px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    }
+    
+    &Footer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 16px;
+    }
+    
+    &Author {
+        margin-right: 15px;
+    }
+    
+    &Text {
+        margin: 5px 0 20px;
+    }
+
+    &Date span {
+      margin-left: 10px;
+    }
+
+    &ImgWrap {
+      width: 149px;
+      height: 112px;
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 40px;
+      display: inline-block;
+      margin-right: 20px;
+      cursor: pointer;
+  
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100% !important;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+}
+
+@media screen and (max-width: $md-tablet-width) {
+  .complaint {
+    &ImgWrap {
+      margin-bottom: 26px;
+    }
+  }
+}

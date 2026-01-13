@@ -1,0 +1,37 @@
+.loginSocial {
+
+    display: flex;
+    width: 148px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+    &Link {
+        display: block;
+        width: 28px;
+        height: 28px;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding-top: 12px;
+        padding-bottom: 12px;
+
+        &Vk {
+            background-image: url("/img/icon-vk.svg");
+            background-size: 24px;
+        }
+  
+        &Fb {
+            background-image: url("/img/icon-fb.svg");
+            background-size: 25px;
+        } 
+
+        &Odn {
+            background-image: url("/img/icon-odn.svg");
+            background-size: 14px;
+        } 
+
+        &Google {
+            background-image: url("/img/icon-google.svg");
+            background-size: 30px;
+        } 
+    }
+}

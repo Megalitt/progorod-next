@@ -1,0 +1,140 @@
+@import 'styles/media';
+
+.banner {
+    display: none;
+    width: 90vw;
+    height: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -35%);
+    z-index: 2147483647;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+    
+    picture + img {
+        visibility: hidden;
+    }
+    
+    @media screen and (max-width: $sm-desktop-width) {
+        display: block;
+    }
+    
+    &Back {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .75);
+        z-index: 401;
+    
+        @media screen and (max-width: $sm-desktop-width) {
+            display: block;
+        }
+    }
+
+    &PushLinkIframe {
+      display: block;
+      position: relative;
+      margin: 20px 0 80px;
+      padding-bottom: 133%;
+      height: 0;
+      width: 100%;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+    }
+
+    &Blocker { 
+      position:absolute; 
+      height:100%; 
+      width:100%; 
+      z-index:1;
+    }
+
+    &BtnClose {
+      width: 50px;
+      height: 50px;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+      position: absolute;
+      top: -45px;
+      left: 50%;
+      transform: translateX(-50%);
+      cursor: pointer;
+      outline: none;
+
+      &::before,
+      &::after {
+          content: "";
+          width: 20px;
+          height: 2px;
+          background-color: #FFF;
+          border-radius: 5px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(45deg);
+          outline: none;
+      }
+      
+      &::after {
+          transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+
+    &Fullscreen {
+      width: 100vw;
+      top: 0;
+      height: auto;
+      bottom: auto;
+      left: auto;
+      right: auto;
+      transform: translate(0);
+      z-index: 2147483647;
+      pointer-events: none;
+    }
+
+    &Fullscreen &PushLinkIframe {
+      margin: 0;
+      padding: 0;
+      height: auto;
+    }
+
+    &Fullscreen &PushLinkIframe > * {
+      pointer-events: auto;
+    }
+
+    &Fullscreen &BtnClose {
+      z-index: 1000001;
+      width: 100%;
+      top: 0;
+      right: 0;
+      left: auto;
+      transform: translateX(0);
+      opacity: 0;
+
+      &::before,
+      &::after {
+        left: auto;
+        right: 0px;
+      }
+    }
+
+    &Fullscreen + &Back {
+      display: none !important;
+    }
+}

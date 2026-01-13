@@ -1,0 +1,52 @@
+@import 'styles/media';
+
+.fix {
+  position: fixed;
+  bottom: -130%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 100;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transition: bottom .4s;
+  
+  &IsShow {
+    opacity: 1;
+    bottom: 0;
+  }
+
+  @media screen and (max-width: $sm-tablet-width) {
+    max-width: 768px;
+  }
+  
+  &Wrap {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+
+    div {
+      margin: 0 auto;
+    }
+  }
+  
+  &Btn {
+      display: inline-block;
+      opacity: 1;
+      position: absolute;
+      right: 0;
+      top: -22px;
+      border: none;
+      padding: 5px 10px;
+      font-size: .65em;
+      cursor: pointer;
+      color: #FFF;
+      background-color: rgba(0, 0, 0, .33);
+      transition: all .3s ease;
+      
+      &:hover {
+          background-color: rgba(0, 0, 0, .6);
+      }
+  }
+}

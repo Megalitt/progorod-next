@@ -1,0 +1,88 @@
+@import 'styles/media';
+
+.newsReview{
+    height: 125px;
+    background-color: #FFF;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+
+    @media  screen and (max-width: $mobile-width){
+        width: calc(100% - 48px);
+        margin: 0 auto 20px;
+    }
+
+    &Link{
+      display: flex;
+      flex-direction: column;
+      padding: 11px 15px;
+      color: var(--color);
+      height: 100%;
+
+        @media  screen and (max-width: $mobile-width){
+            padding: 14px 0 14px;
+        }
+
+        &:hover .newsReviewTitle span {
+            background-size: 100% 1px;
+        }
+
+    }
+    &Title{
+        margin: 0;
+        padding: 0;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 32px;
+        max-height: 4rem;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        text-overflow: ellipsis;
+        &Inner{
+            background-image: linear-gradient(var(--color), var(--color));
+            background-size: 0 1px;
+            background-repeat: no-repeat;
+            background-position: 0 100%;
+            transition: background-size .5s linear;
+        }
+
+
+        @media  screen and (max-width: 1167px){
+            font-size: 16px;
+        }
+        @media  screen and (max-width: $sm-desktop-width){
+            font-size: 20px;
+        }
+        @media  screen and (max-width: $tablet-width){
+            font-size: 18px;
+        }
+        @media  screen and (max-width: $mobile-width){
+            padding: 0 20px;
+        }
+    }
+    &Time{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        margin-top: auto;
+
+        @media  screen and (max-width: $mobile-width){
+            margin-left: 18px;
+            font-size: 12px;
+
+        }
+    }
+
+    &TimeYesterdayHidden {
+      @media  screen and (max-width: $mobile-width){
+        display: none;
+      }
+    }
+}

@@ -1,0 +1,153 @@
+@import 'styles/media';
+
+.sbm {
+    //position: sticky;
+    //top: 90px;
+    //z-index: 300;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 6;
+
+    &Wrp {
+        height: 52px;
+        background-color: var(--light-back);
+        border-radius: 0 0 10px 10px;
+        overflow: hidden;
+        position: relative;
+
+        &::before {
+            content: "";
+            width: 60px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: -3px;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #FFF 100%);
+        }
+    }
+
+    &WrpActive {
+        border-radius: 0;
+    }
+
+    &Ls {
+        height: 85px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+    }
+
+    &Lk {
+        display: block;
+        padding: 14px 29px;
+        font-size: 0.84rem;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+        position: relative;
+
+        &::before {
+            content: "";
+            width: 13px;
+            height: 1px;
+            background-color: var(--color);
+            position: absolute;
+            bottom: 14px;
+            opacity: 0;
+            transition: left .4s;
+        }
+
+        &:hover {
+            &::before {
+                right: 28px;
+                opacity: 1;
+                animation-name: moveDecorateLine;
+                animation-duration: 0.4s;
+                animation-fill-mode: both;
+            }
+        }
+
+        &:active {
+            &::before {
+                left: 28px;
+                opacity: 1;
+                animation-name: expandDecorateLine;
+                animation-duration: 0.4s;
+                animation-fill-mode: both;
+            }
+        }
+
+        &:focus-visible {
+            outline: 1px solid var(--color);
+        }
+    }
+}
+
+@media screen and (max-width: $sm-desktop-width) {
+    .sbm {
+        margin-bottom: 20px;
+        top: 70px;
+        position: static;
+
+        > * {
+            padding: 0;
+        }
+
+        &Wrp {
+            background-image: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+            border-radius: 0;
+        }
+
+        &Ls {
+            li:first-of-type a {
+                margin-left: 13px;
+            }
+        }
+
+        &Lk {
+            padding: 14px 19px;
+            &:hover::before,
+            &:active::before {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $tablet-width) {
+    .sbm {
+        position: relative;
+        z-index: 1;
+        top: auto;
+    }
+}
+
+@media screen and (max-width: $sm-tablet-width) {
+    .sbm {
+        &Ls {
+            li:first-of-type a {
+                margin-left: 0;
+            }
+        }
+
+        &Lk {
+            padding: 14px 10px;
+        }
+    }
+}
+
+
+@keyframes moveDecorateLine {
+    from {right: 28px}
+    to {right: calc(100% - 41px)}
+}
+
+@keyframes expandDecorateLine {
+    from {width: 13px}
+    to {width: calc(100% - 56px)}
+}

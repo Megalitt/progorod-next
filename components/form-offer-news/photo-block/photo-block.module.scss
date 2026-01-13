@@ -1,0 +1,6 @@
+.photo {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 129px);
+    grid-gap: 15px;
+    margin-bottom: 10px;
+}

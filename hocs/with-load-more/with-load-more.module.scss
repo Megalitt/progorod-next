@@ -1,0 +1,36 @@
+@import 'styles/media';
+
+.withLoadMoreBtn {
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+    color: var(--color);
+    text-align: left;
+    margin: 0 auto;
+    padding: 12px 88px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:active {
+        background-color: var(--light-back);
+    }
+}
+
+.withLoadMoreContent {
+  display: none;
+}
+
+@media screen and (max-width: $mobile-width) {
+    .withLoadMoreBtn {
+        display: block;
+        width: calc(100% - 48px);
+        padding: 12px 20px;
+    }
+
+    .withLoadMoreContent {
+      display: block;
+    }
+}

@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "PT Serif";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src:
+      url("/fonts/ptserif.woff2") format("woff2"),
+      url("/fonts/ptserif.woff") format("woff");
+}
+
+@font-face {
+  font-family: "PT Serif";
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+  src:
+      url("/fonts/ptserifbold.woff2") format("woff2"),
+      url("/fonts/ptserifbold.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src:
+      url("/fonts/roboto.woff2") format("woff2"),
+      url("/fonts/roboto.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src:
+      url("/fonts/robotobold.woff2") format("woff2"),
+      url("/fonts/robotobold.woff") format("woff");
+}

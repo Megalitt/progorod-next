@@ -1,0 +1,45 @@
+@import '../../../../styles/media';
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navItem {
+    flex-grow: 1;
+    display: block;
+    padding: 12px 45px;
+    min-height: 48px;
+    font: inherit;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    border: none;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+    background-color: #F0F4F5;
+    
+    &:nth-child(2) {
+        background-color: #F7F9FA;
+    }
+    
+    &:nth-child(3) {
+        background-color: #F0F4F5;
+    }
+    
+    &:nth-child(4) {
+        background-color: #F7F9FA;
+    }
+    
+    &.active {
+        background-color: #FFF;
+        cursor: auto;
+    }
+}
+
+@media  screen and (max-width: $mobile-width) {
+    .navItem {
+        min-height: 44px;
+        padding: 10px 20px;
+    }
+}

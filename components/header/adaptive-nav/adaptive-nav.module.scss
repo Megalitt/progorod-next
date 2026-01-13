@@ -1,0 +1,131 @@
+@import "styles/media";
+
+.adpNvWrp {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 301;
+    opacity: 0;
+    animation-name: menuShow;
+    animation-duration: .2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+
+    &CloseAnimate {
+      animation-name: menuClose;
+      animation-duration: .2s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+}
+
+.adpNv {
+    height: 100%;
+    background-color: #FFF;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    left: 0;
+    right: 25%;
+    top: 0;
+    bottom: 0;
+    z-index: 302;
+    transform: translateX(calc(-100vw - 25%));
+    animation-name: menuSwipe;
+    animation-duration: .2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    transition: all .2s;
+    max-width: 576px;
+    
+    &Inner {
+        height: 100%;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &Footer {
+        margin-top: auto;
+    }
+    
+    &CloseAnimate {
+        animation-name: menuSwipeBack;
+        animation-duration: .2s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+        transition: all .2s;
+    }
+
+    &FullSiteVersion {
+        display: block;
+        margin-top: 35px;
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: $sm-desktop-width) {
+    .adpNvWrp {
+        display: block;
+    }
+    
+    .adpNv {
+        display: block;
+    }
+}
+
+@media screen and (max-width: $sm-tablet-width) {
+    .adpNv {
+        &Inner {
+            padding: 40px 20px;
+        }
+    }
+}
+
+
+@media screen and (max-width: $mobile-width) {
+    .adpNvFullSiteVersion {
+        font-size: 16px;
+        margin-top: 20px;
+    }    
+}
+
+@keyframes menuShow {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+
+@keyframes menuClose {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+@keyframes menuSwipe {
+    0% {
+        transform: translateX(calc(-100vw - 25%));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes menuSwipeBack {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-100vw - 25%));
+    }
+}

@@ -1,0 +1,151 @@
+.field {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 47px;
+    padding: 0 20px 0;
+    font: inherit;
+    color: var(--disabled-text);
+    font-size: 0.89rem;
+    background-color: #ffffff;
+    border: 1px solid var(--disabled);
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all .2s;
+    user-select: none;
+
+    span {
+      color: var(--error);
+      font-size: 12px;
+      line-height: 1;
+      position: absolute;
+      left: 20px;
+      bottom: -20px;
+    }
+
+    &Error {
+      transition: all .4s;
+      background: rgba(234, 60, 60, 0.15) !important;
+      border: 1px solid rgba(234, 60, 60, 0.2);
+      margin-bottom: 30px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 18px;
+      margin-top: -4px;
+      height: 8px;
+      width: 15px;
+      background-image: url("/img/icon-arrow-down.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: all .2s;
+    }
+    
+    &::placeholder {
+        color: var(--disabled-text);
+    }
+    
+    &:hover{
+        background-color: var(--disabled);
+    }
+    
+    &:focus {
+        background-color: var(--light-back);
+        outline: none;
+    }
+}
+
+.fieldActive::after {
+  transform: rotate(-180deg);
+}
+
+.fieldIsSelected {
+  color: var(--color);
+  background-color: var(--light-back);
+}
+
+.dropDown {
+  position: absolute;
+  top: 45px;
+  left: -1px;
+  right: -1px;
+  background-color: #fff;
+  border: 1px solid var(--back);
+  border-top: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  animation-name: SelectOpen;
+  animation-duration: .2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  z-index: 100;
+}
+
+.dropDown, .dropDownClose {
+  animation-duration: .2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.dropDownItem {
+  color: #000;
+  font-size: 14px;
+  padding: 10px 16px;
+  border-top: 1px solid var(--back);
+
+  &:hover {
+    background-color: var(--light-back);
+  }
+}
+
+.dropDownClose {
+  animation-name: SelectClose;
+}
+
+.wrap {
+    position: relative;
+    margin-bottom: 10px;
+    transition: all .4s;
+    
+    span {
+        color: var(--error);
+        font-size: 12px;
+        line-height: 1;
+        position: absolute;
+        left: 20px;
+        bottom: -20px;
+    }
+}
+
+.error {
+    margin-bottom: 30px;
+    
+    .field {
+        background-color: rgba(234, 60, 60, 0.15);
+        border: 1px solid rgba(234, 60, 60, 0.2);
+    }
+}
+
+@keyframes SelectOpen { 
+  0% { 
+    opacity: 0;
+  } 
+  100% {
+    opacity: 1;
+ }
+}
+
+@keyframes SelectClose { 
+  0% { 
+    opacity: 1;
+  } 
+  100% {
+    opacity: 0;
+ }
+}

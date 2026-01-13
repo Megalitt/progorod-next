@@ -1,0 +1,58 @@
+@import 'styles/media';
+
+.newsPdfItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &ImgWrp {
+    display: block;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #DAE4E9;
+    padding-top: 136.191%;
+    width: 100%;
+  }
+
+  &Img {
+    height: 100% !important;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 13px solid transparent;
+  }
+
+  &NumDate {
+    text-align: center;
+    margin-top: 12px;
+
+    @media  screen and (max-width: $tablet-width) {
+      font-size: 14px;
+    }
+  }
+
+  &Download {
+    background-image: url("/img/icon-download.svg");
+    background-repeat: no-repeat;
+    background-position: 0;
+    padding-left: 40px;
+    display: block;
+    color: #A1A1A1;
+    font-size: 14px;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &DownloadValue {
+    word-wrap: break-word;
+    padding-left: 4px;
+  }
+}

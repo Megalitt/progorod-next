@@ -1,0 +1,32 @@
+.columnContent {
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #ffffff;
+
+
+  &Title {
+    padding: 15px 5px;
+    margin: 0;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    background-color: var(--light-back);
+    overflow: hidden;
+  }
+
+  &Text {
+    padding: 0 20px;
+
+    p {
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    a {
+      color: var(--primary);
+    }
+  }
+
+}

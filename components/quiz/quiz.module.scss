@@ -1,0 +1,13 @@
+.test {
+    &Wrap {
+        padding: 40px 20px;
+        background-color: #FFF;
+        border-radius: 10px;
+    }
+    
+    &Counter {
+        display: block;
+        margin-bottom: 15px;
+        font-size: 1.2em;
+    }
+}

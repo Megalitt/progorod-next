@@ -1,0 +1,194 @@
+@keyframes changeBack {
+    to {
+        background: transparent;
+    }
+}
+
+.comment {
+    padding: 10px 0;
+  
+    &Inner {
+        margin-left: 15px;
+    }
+
+    &Fresh {
+        background-color: rgb(255 190 7 / 17%);
+        position: relative;
+        animation-duration: 2s;
+        animation-name: changeBack;
+        animation-iteration-count: 1;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+    
+        &:before,
+        &:after {
+            content: "";
+            width: 10px;
+            height: 100%;
+            position: absolute;
+            background-color: rgb(255 190 7 / 17%);
+            animation-duration: 2s;
+            animation-name: changeBack;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+    
+        &:before {
+            left: -10px;
+        }
+    
+        &:after {
+            right: -10px;
+        }
+    }
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.avatar {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    margin-right: 11px;
+    overflow: hidden;
+    border-radius: 50%;
+  
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.info {
+    color: #A2A2A2;
+    font-size: 14px;
+
+    &Wrap {
+        span {
+            margin-right: 10px;
+        }
+    
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+
+    &Nick {
+        font-weight: bold;
+        font-size: 16px;
+        color: var(--color);
+    }
+
+    &To {
+        font-size: 14px;
+        color: var(--color);
+        background-repeat: no-repeat;
+        background-position: center left;
+        background-size: 9px;
+        padding-left: 15px;
+    }
+}
+
+.btn {
+    padding: 0;
+    font: inherit;
+    color: var(--color);
+    font-size: 16px;
+    font-weight: normal;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    
+    &::before {
+        content: "";
+        width: 10px;
+        height: 1px;
+        background-color: var(--color);
+        position: absolute;
+        bottom: -2px;
+        transition: left .4s;
+    }
+    
+    &:hover {
+        &::before {
+            right: 0;
+            animation-name: moveDecorateLine;
+            animation-duration: 0.4s;
+            animation-fill-mode: both;
+        }
+    }
+    
+    &:active {
+        &::before {
+            left: 0;
+            opacity: 1;
+            animation-name: expandDecorateLine;
+            animation-duration: 0.4s;
+            animation-fill-mode: both;
+        }
+    }
+}
+
+.likesCount {
+    font: inherit;
+    height: 28px;
+    font-size: 16px;
+    line-height: 1;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding-right: 35px;
+    position: relative;
+    
+    &::before {
+        content: "";
+        width: 28px;
+        height: 28px;
+        background-color: #ECF0F2;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 13px;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+  
+    //&:disabled {
+    //    filter: grayscale(100%);
+    //    opacity: .7;
+    //}
+  
+    &Unactive::before {
+        background-image: url("/img/icon-like-off.svg");
+    }
+  
+    &Active::before {
+        background-image: url("/img/icon-like-on.svg");
+    }
+}
+
+@keyframes moveDecorateLine {
+    from {right: 0}
+    to {right: calc(100% - 10px)}
+}
+
+@keyframes expandDecorateLine {
+    from {width: 10px}
+    to {width: 100%}
+}

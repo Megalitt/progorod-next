@@ -1,0 +1,9 @@
+export { default as ArticleInfo } from './article-info/article-info';
+export { default as ArticleGallery } from './article-gallery/article-gallery';
+export { default as ArticleTags } from './article-tags/article-tags';
+export { default as ArticleTagsKirov } from './article-tags-kirov/article-tags-kirov';
+export { default as ArticleRelated } from './article-related/article-related';
+export { default as ArticleSuperPromotion } from './article-super-promotion/article-super-promotion';
+export { default as ArticleBody } from './article-body/article-body';
+export { default as ArticleScrollWrap } from './article-scroll-wrap/article-scroll-wrap';
+export { default as Article } from './article';

@@ -1,0 +1,123 @@
+.sliderModal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  padding: 0 70px;
+  z-index: 300;
+  background-color: rgba(0, 0, 0, 0.55);
+  animation-name: sliderModalShow;
+  animation-duration: .4s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+
+  &Inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation-name: sliderModalZoom;
+    animation-duration: .4s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    background-color: white;
+  }
+
+  &Img {
+    max-height: 1000px;
+    display: block;
+  }
+
+  &ImgLoaded {
+    opacity: 0;
+  }
+
+  &Loader {
+    position: absolute;
+  }
+
+  &BtnNext, &BtnPrev {
+    background-image: url("/img/icon-arrow-next-white.svg");
+    background-size: 14px 17px;
+    height: 60px;
+    width: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &BtnNext, &BtnPrev, &BtnClose {
+    position: absolute;
+     z-index: 220;
+     background-repeat: no-repeat;
+     background-color: transparent;
+     background-position: center;
+     border: none;
+     cursor: pointer;
+  }
+
+  &BtnNext {
+    right: -60px;
+  }
+
+  &BtnPrev {
+    left: -60px;
+    transform: rotate(180deg) translateY(50%);
+  }
+
+  &BtnClose {
+    background-image: url("/img/icon-close-white.svg");
+    width: 60px;
+    height: 60px;
+    right: -64px;
+    top: -20px;
+  }
+
+  &CloseAnimate {
+    animation-name: sliderModalClose;
+    animation-duration: .2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes sliderModalZoom {
+  0% {
+      transform: scale(0);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+@keyframes sliderModalZoomClose {
+  0% {
+      transform: scale(1);
+  }
+  100% {
+      transform: scale(0);
+  }
+}
+
+@keyframes sliderModalShow {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes sliderModalClose {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}

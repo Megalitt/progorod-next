@@ -1,0 +1,56 @@
+@import 'styles/media';
+
+.articleModal {
+  display: none;
+  position: sticky;
+  top: 59px;
+  z-index: 300;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--color);
+  padding: 14px 50px 18px 20px;
+  background-color: var(--back);
+  margin-top: -19px;
+  border-radius: 0px 0px 7px 7px;
+
+  &IsClose {
+    animation-name: ModalAnimatedClose;
+    animation-duration: .2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+
+  &Close {
+    background-image: url("/img/icon-close.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+
+  .articleModal {
+    display: block;
+  }
+
+  .articleModalClose {
+    background-size: 13px;
+  }
+}
+
+@keyframes ModalAnimatedClose { 
+  0% { 
+    opacity: 1;
+  } 
+  100% {
+    opacity: 0;
+ }
+}

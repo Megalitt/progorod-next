@@ -1,0 +1,33 @@
+@import 'styles/media';
+
+.articleVote {
+    position: relative;
+    padding: 16px 0 6px 0;
+
+    &::before {
+      content: "";
+      width: auto;
+      height: 1px;
+      background-color: var(--back);
+      position: absolute;
+      top: 0;
+      left: -70px;
+      right: -70px;
+    }
+  
+    &Head {
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 38px;
+      text-align: center;
+    }
+}
+
+@media  screen and (max-width: $md-tablet-width) {
+  .articleVoteHead {
+    font-size: 20px;
+    line-height: 32px;
+    text-align: left;
+    margin-bottom: 18px;
+  }
+}

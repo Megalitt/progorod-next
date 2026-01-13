@@ -1,0 +1,9 @@
+export const commentsSelector = (state) => state.comments.comments;
+export const commentsCountsSelector = (state) => state.comments.commentsCounts;
+export const commentsDisabledSelector = (state) => state.comments.commentsDisabled;
+export const commentsPerPageSelector = (state) => state.comments.commentsPerPage;
+export const newCommentDataSelector = (state) => state.comments.newCommentData;
+export const nicknameSelector = (state) => state.comments.nickname;
+export const mainInputDisabledSelector = (state) => state.comments.mainInputDisabled;
+export const isFormAnswerSendSelector = (state) => state.comments.isFormAnswerSend;
+export const commentsModeSelector = (state) => state.comments.commentsMode;

@@ -1,0 +1,138 @@
+@import 'styles/media';
+
+.articleSocial {
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media  screen and (max-width: $mobile-width) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &:before {
+        content: "";
+        width: auto;
+        height: 1px;
+        background-color: var(--disabled);
+        position: absolute;
+        top: 0;
+        left: -70px;
+        right: -70px;
+    }
+    &:after {
+        content: "";
+        width: auto;
+        height: 1px;
+        background-color: var(--disabled);
+        position: absolute;
+        bottom: 0;
+        left: -70px;
+        right: -70px;
+    }
+    
+    &List {
+        display: flex;
+        margin: 0;
+        padding: 0;
+
+        @media  screen and (max-width: $mobile-width) {
+            margin-top: 26px;
+        }
+    }
+    
+    &Item {
+        list-style: none;
+        position: relative;
+        padding: 0 13px;
+        display: flex;
+        align-items: center;
+        
+        @media  screen and (max-width: $tablet-width) {
+            padding: 0 10px;
+        }
+        &:after {
+            content: "";
+            width: 1px;
+            height: auto;
+            background-color: var(--disabled-text);
+            position: absolute;
+            top: 3px;
+            bottom: 3px;
+            right: 0;
+        }
+        &:last-child{
+            &:after{
+                background-color: transparent;
+            }
+        }
+    }
+
+    &Item:last-child {
+        padding-right: 0;
+    }
+    
+    &Icon {
+        display: block;
+        height: 28px;
+        background-repeat: no-repeat;
+        background-position: left center;
+        padding-left: 40px;
+
+        &Vk {
+            background-image: url("/img/icon-vk.svg");
+            width: 35px;
+        }
+
+        &Ws {
+            background-image: url("/img/icon-ws.svg");
+            width: 26px;
+        }
+
+        &Tm {
+            background-image: url("/img/icon-tm.svg");
+        }
+    }
+
+    &Count {
+        margin-left: 5px;
+    }
+}
+
+.btnComment {
+    width: 100%;
+    max-width: 295px;
+    min-height: 50px;
+    display: inline-block;
+    padding: 15px 20px;
+    color: #FFF;
+    font-size: 0.89rem;
+    font-weight: bold;
+    line-height: 1;
+    background-color: var(--primary);
+    border-radius: 90px;
+    transition: background-color 0.4s;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    
+    &:hover {
+        background-color: var(--primary-light);
+    }
+    &:focus-visible {
+        outline: 1px solid var(--color);
+    }
+    
+    &:active {
+        background-color: var(--primary-dark);
+    }
+}
+
+@media screen and (max-width: $mobile-width) {
+    .btnComment {
+        max-width: 232px;
+        min-height: 46px;
+    }
+}

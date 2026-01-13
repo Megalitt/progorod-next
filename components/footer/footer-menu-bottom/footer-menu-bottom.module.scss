@@ -1,0 +1,24 @@
+@import 'styles/media';
+
+.ftrBtmLst {
+  margin: 0 0 18px 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 240px));
+  grid-column-gap: 1%;
+}
+
+@media screen and (max-width: $sm-desktop-width) {
+  .ftrBtmLst {
+    grid-template-columns: repeat(3, minmax(70px, 170px));
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+  .ftrBtmLst {
+    display: block;
+    padding: 8px 20px;
+  }
+}
+

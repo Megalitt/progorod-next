@@ -1,0 +1,53 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  padding-top: 0;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  list-style: none;
+
+  &BtnPrev {
+    background-image: url("/img/icon-arrow-prev.svg");
+  }
+
+  &BtnNext {
+    background-image: url("/img/icon-arrow-next.svg");
+  }
+
+  &BtnPrev,
+  &BtnNext {
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-size: 7px;
+    border: none;
+    width: 33px;
+    height: 33px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  &Link {
+    width: 33px;
+    height: 33px;
+    user-select: none;
+    border-radius: 5px;
+    margin: 0 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  &LinkActive,
+  &Link:hover {
+    background-color: rgb(255, 255, 255);
+  }
+
+  &BtnDisabled {
+    display: none;
+  }
+}

@@ -1,0 +1,162 @@
+@import '../../../../styles/media';
+
+.specialist {
+    &Wrap {
+        display: grid;
+        grid-template-columns: 200px auto;
+        grid-column-gap: 30px;
+        padding: 60px 70px 35px;
+        background-color: #FFFFFF;
+        border-radius: 10px 10px 0 0;
+        @media screen and (max-width: 1200px) {
+            padding: 32px;
+        }
+        @media screen and (max-width: $sm-tablet-width) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 0;
+            position: relative;
+            border-radius: 10px 10px 7px 7px;
+            overflow: hidden;
+        }
+    }
+    &Img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        &Wrap {
+            display: block;
+            padding-top: 135%;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            @media screen and (max-width: $sm-tablet-width) {
+                width: 118px;
+            }
+        }
+    }
+    &Info{
+        width: 100%;
+    }
+    &Tag {
+        padding: 0 9px 2px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 26px;
+        color: #000106;
+        background-color: #F7F9FA;
+        border: 1px solid #ECF0F2;
+        border-radius: 90px;
+        @media screen and (max-width: $mobile-width) {
+            font-size: 12px;
+            line-height: 15px;
+        }
+        &Wrap {
+            margin: 10px 0 15px;
+            @media screen and (max-width: $sm-tablet-width) {
+                margin: 15px 0 8px;
+            }
+        }
+    }
+    &Name {
+        grid-area: name;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 38px;
+        margin-bottom: 8px;
+        @media screen and (max-width: $tablet-width) {
+            font-size: 20px;
+            line-height: 32px;
+        }
+        @media screen and (max-width: $sm-tablet-width) {
+            font-size: 18px;
+            line-height: 30px;
+        }
+    }
+    &Career {
+        display: block;
+        font-size: 18px;
+        line-height: 30px;
+        margin-bottom: 30px;
+        @media screen and (max-width: $tablet-width) {
+            font-size: 16px;
+            line-height: 26px;
+        }
+        @media screen and (max-width: $sm-tablet-width) {
+            font-size: 12px;
+            line-height: 20px;
+            margin-bottom: 50px;
+        }
+    }
+    &Contact-list {
+        margin: 0;
+        padding: 0 0 0 20px;
+        @media screen and (max-width: $sm-tablet-width) {
+            display: none;
+        }
+        &Item {
+            margin-bottom: 5px;
+        }
+    }
+    &BtnWrap {
+        padding: 38px 70px;
+        background-color: #F7F9FA;
+        display: flex;
+        align-items: center;
+
+        *:first-of-type {
+            margin-right: 30px;
+        }
+
+        @media screen and (max-width: $sm-tablet-width) {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: -25px;
+            margin-bottom: 25px;
+            *:first-of-type {
+                margin-right: 0;
+                margin-bottom: 25px;
+            }
+        }
+    }
+    &BtnMore {
+        border: none;
+        outline: none;
+        padding: 0;
+        height: 30px;
+        width: 100%;
+        cursor: pointer;
+        background-color: #F7F9FA;
+        //background-image: url("../img/icon-arrow-bottom.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 15px 7px;
+        &Wrap {
+            display: none;
+            position: relative;
+            width: auto;
+            margin: 0 -32px;
+            height: 30px;
+            @media screen and (max-width: $sm-tablet-width) {
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                margin: 0;
+            }
+        }
+        @media screen and (max-width: $mobile-width) {
+            border-radius: 0 0 7px 7px;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+.btnLoad {
+    display: none;
+    
+    + label {
+        font-size: 0.89rem;
+        font-weight: bold;
+        cursor: pointer;
+        position: relative;
+    
+        &::before {
+            content: "";
+            width: 10px;
+            height: 1px;
+            background-color: var(--color);
+            position: absolute;
+            bottom: -2px;
+            opacity: 0;
+            transition: left .4s;
+        }
+    
+        &:hover {
+            &::before {
+                right: 0;
+                opacity: 1;
+                animation-name: moveDecorateLine;
+                animation-duration: 0.4s;
+                animation-fill-mode: both;
+            }
+        }
+    
+        &:active {
+            &::before {
+                left: 0;
+                opacity: 1;
+                animation-name: expandDecorateLine;
+                animation-duration: 0.4s;
+                animation-fill-mode: both;
+            }
+        }
+    }
+}
+
+@keyframes moveDecorateLine {
+    from {right: 0}
+    to {right: calc(100% - 10px)}
+}
+
+@keyframes expandDecorateLine {
+    from {width: 10px}
+    to {width: 100%}
+}

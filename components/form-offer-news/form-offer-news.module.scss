@@ -1,0 +1,114 @@
+@import 'styles/media';
+
+.formOffer {
+    display: grid;
+    grid-template-areas:
+        "name name name name mail"
+        "text text text text text"
+        "pers pers pers auth auth"
+        "foto foto foto foto foto"
+        "add  send send send send"
+        ;
+    grid-template-columns: 16% 12% 10% 12% auto;
+    padding: 0;
+    grid-gap: 0;
+    @media screen and (max-width: $sm-desktop-width) {
+        grid-template-areas:
+            "name name mail"
+            "text text text"
+            "pers pers pers"
+            "auth auth auth"
+            "foto foto foto"
+            "add  send send"
+            ;
+        grid-template-columns: 35% 15% 50%;
+    }
+    @media screen and (max-width: $sm-tablet-width) {
+        grid-template-areas:
+            "name"
+            "mail"
+            "text"
+            "pers"
+            "auth"
+            "foto"
+            "add"
+            "send"
+            ;
+        grid-template-columns: 100%;
+    }
+
+    &Name {
+        grid-area: name;
+        margin-right: 5px;
+        @media screen and (max-width: $sm-tablet-width) {
+            margin-right: 0;
+        }
+    }
+
+    &Mail {
+        grid-area: mail;
+        margin-left: 5px;
+        @media screen and (max-width: $sm-tablet-width) {
+            margin-left: 0;
+        }
+    }
+
+    &Text {
+        grid-area: text;
+        margin-bottom: 20px;
+    }
+
+    &CheckAuthor {
+        grid-area: auth;
+        margin-left: 10px;
+        @media screen and (max-width: $sm-desktop-width) {
+            margin-left: 0;
+        }
+        @media screen and (max-width: $sm-tablet-width) {
+            margin-bottom: 0;
+        }
+    }
+
+    &CheckPersonal {
+        grid-area: pers;
+        margin-bottom: 20px;
+        @media screen and (max-width: $md-desktop-width) {
+            margin-bottom: 10px;
+        }
+        @media screen and (max-width: $sm-tablet-width) {
+            margin-bottom: 0;
+        }
+    }
+
+    &Photo {
+        grid-area: foto;
+        margin-bottom: 20px;
+        transition: all 1s;
+        @media screen and (max-width: $sm-tablet-width) {
+            margin: 15px 0 15px;
+        }
+    }
+
+    &Add {
+        grid-area: add;
+        align-self: center;
+        transition: all 1s;
+        @media screen and (max-width: $sm-tablet-width) {
+            margin-bottom: 25px;
+            justify-self: center;
+        }
+    }
+
+    &Send {
+        grid-area: send;
+        width: 295px;
+        transition: all 1s;
+        @media screen and (max-width: $md-desktop-width) {
+            margin-left: 40px;
+        }
+        @media screen and (max-width: $sm-desktop-width) {
+            margin-left: 0;
+            justify-self: center;
+        }
+    }
+}

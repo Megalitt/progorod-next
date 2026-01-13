@@ -1,0 +1,76 @@
+@import 'styles/media';
+
+.tabBar {
+    height: 100%;
+    font-size: 0.89rem;
+    background-color: #FFF;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    
+    &NavContainer {
+        width: 100%;
+        height: 48px;
+        background-color: #F2F5F6;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+
+    &Container {
+      min-height: 370px;
+    }
+
+    > div + div {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    
+    &Nav {
+        height: 85px;
+        margin: 0 0 4px 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+    }
+
+    &MoreNewsLink {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: -26px auto 0 auto;
+      max-width: 130px;
+      min-height: 27px;
+      line-height: 36px;
+      background-color: var(--primary);
+      border-radius: 90px;
+      transition: background-color 0.4s;
+      z-index: 1;
+      text-align: center;
+      color: #ffffff;
+
+      &:hover {
+        background-color: var(--primary-light);
+      }
+      &:focus-visible {
+        outline: 1px solid var(--color);
+      }
+      
+      &:active {
+        background-color: var(--primary-dark);
+      }
+    }
+}
+
+@media  screen and (max-width: $mobile-width) {
+    .tabBar {
+        &NavContainer {
+            height: 44px;
+        }
+    }
+}

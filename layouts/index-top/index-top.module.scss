@@ -1,0 +1,33 @@
+@import 'styles/media';
+
+.indexTop {
+    display: grid;
+    grid-template-columns:  345px  1fr 280px;
+    grid-template-rows: minmax(445px, 1fr);
+    grid-column-gap: 20px;
+    height: 445px;
+    margin-bottom: 20px;
+    
+    @media  screen and (max-width: $sm-desktop-width) {
+        grid-template-columns:  345px  1fr;
+    }
+    
+    @media  screen and (max-width: $tablet-width) {
+        height: auto;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-column-gap: 0;
+        grid-row-gap: 30px;
+    }
+    
+    &ColRight{
+        @media  screen and (max-width: $sm-desktop-width) {
+            display: none;
+        }
+
+        @media  screen and (max-width: $md-tablet-width) {
+          display: block;
+        }
+    }
+}
+

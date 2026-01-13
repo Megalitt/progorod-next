@@ -1,0 +1,85 @@
+@import 'styles/media';
+
+.concursSlider {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  padding: 15px;
+  overflow: hidden;
+
+  @media screen and (max-width: $mobile-width) {
+      padding: 0;
+      margin: 0 0 0 21px;
+      background-color: transparent;
+      width: 100%;
+  }
+  
+  &Wrap {
+      flex-grow: 1;
+      padding: 10px;
+      margin: 0 -15px -15px;
+      background-color: #FFF;
+  }
+  
+  &TitleLink{
+      color: var(--color);
+      text-decoration: none;
+      cursor: pointer;
+      outline: none;
+  }
+
+  &TitleItem {
+      min-width: 223px !important;
+  }
+  
+  &Title{
+      margin: 0;
+      padding-bottom: 16px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 32px;
+
+      @media  screen and (max-width: $tablet-width) {
+        font-size: 18px;
+      }
+
+    &:hover &Inner::before {
+      right: 28px;
+      opacity: 1;
+      animation-name: moveDecorateLine;
+      animation-duration: 0.4s;
+      animation-fill-mode: both;
+    }
+  }
+
+  &TitleInner {
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 11px;
+      height: 1px;
+      background-color: var(--color);
+      position: absolute;
+      bottom: 0px;
+      opacity: 1;
+      transition: left 0.4s;
+    }
+  }
+
+  @media  screen and (max-width: $mobile-width) {
+    &Wrap {
+      padding: 0;
+      margin: 0; 
+      background-color: transparent;
+    }
+  }
+}
+
+@keyframes moveDecorateLine {
+  from {left: 28px}
+  to {left: calc(100% - 15px)}
+}

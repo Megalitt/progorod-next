@@ -1,0 +1,69 @@
+@import 'styles/media';
+
+.articleSuperPromotion {
+  display: none;
+  clear: both;
+}
+
+@media screen and (max-width: $tablet-width) {
+  .articleSuperPromotion {
+    display: block;
+    margin: 0 -32px 30px -32px;
+    padding: 12px 32px;
+    background-color: var(--light-back);
+
+    &Link {
+      display: grid;
+      grid-template-columns: 171px 1fr;
+      grid-gap: 0 20px;
+    }
+
+    &ImgWrap {
+      display: block;
+      padding-top: 53.6%;
+      grid-area: "img";
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    &ImgInner {
+      align-self: center;
+    }
+
+    &Img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    &Title {
+      align-self: center;
+      margin: 0;
+    }
+  }
+}
+
+
+@media screen and (max-width: $mobile-width) {
+  .articleSuperPromotion {
+
+    margin: 0 -16px 30px -16px;
+    padding: 10px 16px;
+
+    &Link {
+      display: grid;
+      grid-template-columns: 105px 1fr;
+      grid-gap: 0 15px;
+    }
+
+    &Title {
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+}
+

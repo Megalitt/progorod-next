@@ -1,0 +1,28 @@
+@import '../../../../styles/media';
+
+.select {
+    margin-bottom: 10px;
+}
+.blockForm {
+    &Field {
+        margin-bottom: 7px;
+    }
+
+    &Fields {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        @media screen and (max-width: $mobile-width) {
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 10px;
+        }
+    }
+
+    &Action {
+        padding: 30px 0;
+        @media screen and (max-width: $mobile-width) {
+            text-align: center;
+        }
+    }
+
+}

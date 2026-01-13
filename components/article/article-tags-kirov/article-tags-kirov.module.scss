@@ -1,0 +1,40 @@
+@import 'styles/media';
+
+.articleTags{
+    margin: 32px 0 21px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @media  screen and (max-width: $tablet-width) {
+      margin: 20px 0 10px;
+      justify-content: flex-start;
+    }
+    @media  screen and (max-width: $mobile-width) {
+      margin: 20px 0 16px;    }
+    &Item{
+        list-style: none;
+        margin: 0 7px 10px;
+        @media  screen and (max-width: $mobile-width) {
+            margin: 0 16px 16px 0;
+        }
+    }
+    &Link{
+        background: var(--light-back);
+        border: 1px solid var(--back);
+        border-radius: 15px;
+        padding: 0 11px 2px;
+        text-decoration: none;
+        outline: none;
+        transition: .4s;
+    
+        &:first-letter {
+            text-transform: uppercase;
+        }
+
+        &:hover, &:active {
+            background-color: var(--back);
+        }
+    }
+}

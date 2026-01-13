@@ -1,0 +1,41 @@
+.complaintLike {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &BtnUp,
+  &BtnDown {
+    border: none;
+    background-color: var(--back);
+    width: 28px;
+    height: 28px;
+    border-radius: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+
+  &BtnUp {
+    background-image: url("/img/icon-like-hand.svg");
+  }
+
+  &BtnDown {
+    background-image: url("/img/icon-dislike-hand.svg");
+  }
+
+  &Counter {
+    width: 36px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  &BtnUpActive {
+    background-image: url("/img/icon-like-hand-active.svg");
+    background-size: 13px;
+  }
+
+  &BtnDownActive {
+    background-image: url("/img/icon-dislike-hand-active.svg");
+    background-size: 13px;
+  }
+}

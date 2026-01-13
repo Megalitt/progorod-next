@@ -1,0 +1,146 @@
+@import '../../../../styles/media';
+
+.complaint {
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  padding: 40px 56px 20px 56px;
+  margin-bottom: 14px;
+  position: relative;
+  display: block;
+  transition: all .2s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.75);
+  }
+
+  &Link {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  &Text {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  &Footer {
+    display: flex;
+    align-items: center;
+  }
+
+  &FooterRight {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  &BtnAnswer {
+    position: relative;
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color);
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    background: none;
+    border: 0;
+    margin-right: 36px;
+
+    &::after {
+      content: "";
+      width: 10px;
+      height: 1px;
+      background-color: var(--color);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    &:hover::after {
+      left: 0;
+      animation-name: expandDecorateLine;
+      animation-duration: 0.4s;
+      animation-fill-mode: both;
+    }
+  }
+
+  &CommentsIcon {
+    margin: 0 5px 0 15px;
+  }
+
+  &Date span {
+    margin-left: 10px;
+  }
+
+  &ImgWrap {
+    width: 149px;
+    height: 112px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    display: inline-block;
+    margin-right: 20px;
+    cursor: pointer;
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100% !important;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@keyframes expandDecorateLine {
+  from {width: 10px}
+  to {width: 100%}
+}
+
+@media screen and (max-width: $md-tablet-width) {
+  .complaint {
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 24px;
+    padding-bottom: 12px;
+  
+    &IsAnswer {
+      padding-bottom: 50px;
+    }
+
+    &Text {
+      margin-bottom: 20px;
+    }
+
+    &BtnAnswer {
+      background-color: var(--primary);
+      background-image: url("/img/icon-arrow-next-white.svg");
+      background-repeat: no-repeat;
+      background-position: calc(100% - 24px);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      padding: 10px 10px;
+      font-size: 12px;
+      color: #ffffff;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &ImgWrap {
+      margin-bottom: 26px;
+    }
+  }
+}

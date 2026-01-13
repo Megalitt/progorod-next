@@ -1,0 +1,23 @@
+@import 'styles/media';
+
+.newsPdf {
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap: 20px;
+  margin-bottom: 26px;
+  justify-content: flex-start;
+
+  @media  screen and (max-width: $tablet-width) {
+    margin: 0 -4px;
+  }
+
+  @media  screen and (max-width: $sm-tablet-width) {
+    grid-gap: 12px;
+  }
+  
+  @media  screen and (max-width: $md-tablet-width) {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+}

@@ -1,0 +1,28 @@
+@import 'styles/media';
+
+.banner {
+    &Link {
+        display: block;
+        cursor: pointer;
+
+        img {
+            display: block;
+
+            @media screen and (max-width: $md-tablet-width) {
+              max-width: 100%;
+            }
+        }
+    }
+
+    &Blocker { 
+      position:absolute; 
+      height:100%; 
+      width:100%; 
+      z-index:1;
+    }
+  
+    &View {
+        height: 0 !important;
+        display: none;
+    }
+}

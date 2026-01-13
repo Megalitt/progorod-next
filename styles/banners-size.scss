@@ -1,0 +1,35 @@
+@import 'styles/media';
+
+.contentRightMainBanner {
+  height: 445px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.contentRightStretchBanner120 {
+  height: 445px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.contentRightStretchBanner140 {
+  height: 532px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.contentCentralBanner {
+  height: 135px;
+}
+
+#banners-after-comments {
+  max-height: 0;
+  overflow: hidden;
+}
+
+@media screen and (max-width: $sm-tablet-width) {
+  .contentRightMainBanner,
+  .contentCentralBanner {
+    height: auto;
+  }
+}

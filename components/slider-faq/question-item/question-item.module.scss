@@ -1,0 +1,118 @@
+@import 'styles/media';
+
+.question {
+    
+    &Content{
+        display: grid;
+        grid-template-columns: 143px 1fr ;
+        grid-template-areas:
+            "questImg questText"
+            "questImg .";
+        grid-gap:10px;
+        background: #FFF;
+        border-radius: 0 0 10px 10px;
+        padding: 15px;
+       
+        @media  screen and (max-width: $mobile-width){
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "questText"
+                "questBtn";
+            border-radius: 7px;
+            padding: 0;
+        }
+
+        &:hover .questionBtn {
+            background-color: var(--primary-light);
+        }
+
+        &:focus-visible  .questionBtn {
+            outline: 1px solid var(--primary-dark);
+        }
+
+        &:active .questionBtn {
+            background-color: var(--primary-dark);
+        }
+    }
+    
+    &ImgWrap {
+        grid-area: questImg;
+        display: block;
+        position: relative;
+        padding-top: 137.21%;
+        border-radius: 10px;
+        overflow: hidden;
+        object-fit: cover;
+        @media  screen and (max-width: $mobile-width){
+            display: none;
+        }
+    }
+
+    &ImgWrapNoPhoto {
+      background-color: #F7F9FA;
+      background-image: url('/img/no-photo-square.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+    &Img{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    &Text{
+        grid-area: questText;
+        height: 124px;
+        margin: 0;
+        padding: 13px 0 9px 17px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        background-color: var(--light-back);
+        border: 1px solid var(--back);
+        border-radius: 10px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        text-overflow: ellipsis;
+
+        @media  screen and (max-width: $mobile-width){
+          background-color: #fff;
+          border: none;
+          padding: 16px 19px 5px;
+          font-size: 14px;
+          line-height: 22px;
+          height: 108px;
+          -webkit-line-clamp: 4;
+        }
+    }
+    
+    &Btn{
+        display: inline-block;
+        border-radius: 7px;
+        max-width: 225px;
+        width: 100%;
+        min-height: 38px;
+        padding: 12px 20px;
+        color: #FFF;
+        font-size: 0.89rem;
+        line-height: 1;
+        background-color: var(--primary);
+        transition: background-color 0.4s;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        text-align: center;
+
+        @media  screen and (max-width: $mobile-width){
+            max-width: 100%;
+            border-radius: 0 0 7px 7px;
+            min-width: auto;
+        }
+    }
+}

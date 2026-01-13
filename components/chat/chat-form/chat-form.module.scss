@@ -1,0 +1,64 @@
+.chatForm {
+    &FieldWrap {
+        margin: 6px 0;
+    }
+
+    &FieldTextarea {
+        position: relative;
+        flex-grow: 1;
+        margin: 0;
+        margin-right: 10px;
+    }
+
+    &Btn {
+        width: 47px;
+        max-width: 47px;
+        min-width: 47px;
+        height: 47px;
+        min-height: 47px;
+        color: var(--color);
+        font-family: inherit;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        background-color: var(--primary);
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        outline: none;
+        background-repeat: no-repeat;
+        background-size: 21px;
+        background-position: center;
+        background-image: url('/img/icon-chat-send.svg');
+    
+        &:disabled {
+            background-color: darkgray;
+            cursor: auto;
+        }
+    }
+
+    &EmojiBtn {
+        width: 28px;
+        height: 28px;
+        padding: 0;
+        background-color: transparent;
+        background-image: url('/img/icon-smile.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 19px;
+        border: none;
+        outline: none;
+        position: absolute;
+        top: 9px;
+        right: 9px;
+        cursor: pointer;
+    }
+    
+    &TextareaWrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        
+    }
+
+}

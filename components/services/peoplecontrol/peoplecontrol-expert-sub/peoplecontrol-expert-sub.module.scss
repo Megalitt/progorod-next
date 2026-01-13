@@ -1,0 +1,39 @@
+.expert {
+    padding: 60px 70px;
+    background-color: #FFF;
+    border-radius: 10px;
+    
+    &ImgWrap {
+        flex-shrink: 0;
+        width: 25.6%;
+        margin-right: 55px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+    &Img {
+        display: block;
+    }
+    
+    &Descr {
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 16px;
+        padding: 5px 9px;
+        border: 1px solid var(--back);
+        border-radius: 15px;
+        background-color: var(--light-back);
+        text-align: center;
+    }
+    
+    &Name {
+        margin: 20px 0;
+        font-size: 24px;
+    }
+}
+
+.flex {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}

@@ -1,0 +1,19 @@
+{
+  "extends": "stylelint-config-recommended-scss",
+  "rules": {
+    "color-hex-case": [
+      "upper",
+      {
+        "message": "uppercase letters are easier to copy from Figma"
+      }
+    ],
+    "indentation": [
+      4,
+      {
+        "except": ["param"],
+        "message": "Please use 4 spaces for indentation.",
+        "severity": "error"
+      }
+    ]
+  }
+}

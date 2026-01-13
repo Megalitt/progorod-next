@@ -1,0 +1,69 @@
+b.provotorov-23078_banners_fixed_height
+b.provotorov-23078_banners_fixed_height_next15
+b.provotorov-22715_npm_update
+amp/37742
+
+
+
+    width: 135px;
+    height: 35px;
+
+Проверка ошибок typescript без старта проекта npx tsc --noEmit --project .
+
+b.provotorov-23295_pagespeed_error_analysis_next15
+
+GK | Уменьшить css файл, блокирующий отрисовку страницы
+http://otdel.srv43.ru/products/projects/tasks.aspx?prjID=76&id=23402
+
+PG | Ошибки при анализе в PageSpeed Insights — принудительная компоновка и неиспользуемый код
+http://otdel.srv43.ru/products/projects/tasks.aspx?prjID=2&id=23295
+Сейчас в отчете "Удалите неиспользуемый код JavaScript Ожидаемая экономия – 25 КиБ"
+
+PG | оптимизация фронта на ошибки js
+http://otdel.srv43.ru/products/projects/tasks.aspx?prjID=2&id=23043
+
+1. использования устаревшего кода js и его вырезки из проекта
+2. загрузки неиспользуемых скриптов js и их исключения по части лишней загрузки
+
+==================== Отслеживать ==================================
+Фиксировать размеры блоков
+http://otdel.srv43.ru/products/projects/tasks.aspx?prjID=2&id=23078
+
+PG | Загрузка файла favicon
+http://otdel.srv43.ru/products/projects/tasks.aspx?prjID=2&id=23452
+
+Перевести сайт https://ko44.ru/ с платформы ГК на платформу ПГ
+http://otdel.srv43.ru/products/projects/tasks.aspx?prjID=78&id=23447
+
+Переезд сайтов на H15
+http://otdel.srv43.ru/products/projects/tasks.aspx?prjID=7&id=23361
+
+progoroduhta.ru/конкурс
+http://otdel.srv43.ru/products/projects/tasks.aspx?prjID=35&id=23425
+
+Ошибка на AMP-странице материала
+http://otdel.srv43.ru/products/projects/tasks.aspx?prjID=90&id=23428
+
+shastin-23295_pagespeed_error_analysis_next15
+
+
+
+
+
+
+
+
+
+
+
+
+b.provotorov-23078_banners_fixed_height
+b.provotorov-23078_banners_fixed_height_next15
+
+
+Если на вкладке "Сеть" браузера видно заголовок Transfer-Encoding: chunked — это не обязательно означает, что ваше приложение реально "стримит" данные.
+Это значит, что сервер разбивает ответ на части и отправляет их по мере готовности, но с точки зрения Next.js Pages Router — это обычный полный ответ, который формируется и завершается до рендера.
+Если бы вы хотели реализовать настоящую потоковую передачу (streaming) в Next.js, нужно использовать App Router с поддержкой React Server Components и streaming, а не Pages Router.
+
+
+App Router — это современная система маршрутизации в Next.js, представленная начиная с версии 13, которая использует последние возможности React и предлагает новый подход к построению веб-приложений.

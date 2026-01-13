@@ -1,0 +1,29 @@
+.button {
+    min-width: 295px;
+    min-height: 50px;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #FFF;
+    font-size: 0.89rem;
+    font-weight: bold;
+    line-height: 1;
+    background-color: var(--primary);
+    border-radius: 90px;
+    transition: background-color 0.4s;
+    border: none;
+    cursor: pointer;
+    
+    &:hover {
+        background-color: var(--primary-light);
+    }
+    
+    &:active {
+        background-color: var(--primary-dark);
+    }
+    
+    &:disabled {
+        color: var(--disabled-text);
+        background-color: var(--disabled);
+        cursor: not-allowed;
+    }
+}

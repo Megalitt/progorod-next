@@ -1,0 +1,53 @@
+@import "styles/media";
+
+.burger {
+    width: 48px;
+    height: 40px;
+    margin: 0 10px 0 -12px;
+    padding: 0;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    outline: none;
+    position: relative;
+    touch-action: none;
+    cursor: pointer;
+
+    &Hide {
+      display: none;
+    }
+    
+    &::before {
+        content: "";
+        border-radius: 3px;
+        width: 19px;
+        height: 1px;
+        background-color: var(--color);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow:
+            0 5px 0 0 var(--color),
+            0 -5px 0 0 var(--color);
+    }
+    
+    &:focus-visible {
+        outline: 1px solid var(--color);
+    }
+}
+
+@media  screen and (max-width: $sm-desktop-width) {
+  .burger {
+    &Hide {
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: $sm-tablet-width) {
+    .burger {
+        margin-right: 0;
+    }
+}

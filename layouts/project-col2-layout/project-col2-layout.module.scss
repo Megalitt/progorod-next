@@ -1,0 +1,23 @@
+@import 'styles/media';
+
+.grid {
+    display: grid;
+    grid-template-columns: calc(100% - 300px) 280px;
+    grid-column-gap: 20px;
+    align-items: stretch;
+    margin-bottom: 20px;
+    
+    @media  screen and (max-width: 900px) {
+        grid-template-columns: 100%;
+    }
+
+    &Full {
+      grid-template-columns: auto;
+    }
+}
+
+.colRight {
+  @media  screen and (max-width: 900px) {
+      display: none;
+  }
+}

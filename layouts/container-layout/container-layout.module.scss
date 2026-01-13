@@ -1,0 +1,29 @@
+@import 'styles/media';
+
+.container {
+    max-width: $desktop-width;
+    min-width: 314px;
+    margin: 0 auto;
+    padding: 0 43px;
+    width: 100%;
+    position: relative;
+}
+
+@media screen and (max-width: $sm-desktop-width) { 
+    .container {
+        padding: 0 34px;
+    }
+}
+
+@media screen and (max-width: $sm-tablet-width) { 
+    .container {
+        padding: 0 24px;
+    }
+}
+
+@media screen and (max-width: $mobile-width) { 
+    .container {
+        padding: 0 3px;
+    }
+ }
+

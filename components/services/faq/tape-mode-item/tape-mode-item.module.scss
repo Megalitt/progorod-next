@@ -1,0 +1,242 @@
+@import '../../../../styles/media';
+
+.popularity {
+  
+    &Col{
+        &Top{
+            @media screen and (max-width: $mobile-width) {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+    
+    &Item{
+        padding: 50px 70px 44px;
+        background-color: #FFFFFF;
+        margin-bottom: 14px;
+        @media screen and (max-width: $sm-desktop-width) {
+            padding: 10px;
+        }
+        @media screen and (max-width: $tablet-width) {
+            padding: 32px;
+        }
+        @media screen and (max-width: $mobile-width) {
+            padding: 0 21px 0;
+            margin-bottom: 7px;
+            background-color: var(--back);
+        }
+    }
+    &Content{
+        display: grid;
+        grid-template-columns: 179px auto ;
+        grid-gap: 30px;
+        margin-bottom: 35px;
+        @media screen and (max-width: $tablet-width) {
+            grid-gap: 20px;
+        }
+        @media screen and (max-width: $mobile-width) {
+            grid-template-columns: auto;
+            padding: 17px;
+            position: relative;
+            margin-bottom: 0;
+            background-color: #FFFFFF;
+            border-radius: 7px;
+        }
+    }
+    &Img{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100% !important;
+        width: 100%;
+        object-fit: cover;
+        &Title{
+            display: block;
+            text-align: center;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 18px;
+            @media screen and (max-width: 2560px) {
+                display: none;
+            }
+            @media screen and (max-width: $tablet-width) {
+                display: block;
+            }
+        }
+        &Wrap{
+            display: block;
+            max-height: 242px;
+            padding-top: 135.2%;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            @media screen and (max-width: $tablet-width) {
+                width: 78px;
+                height: 106px;
+                padding-top: 66.2%;
+                margin: 15px auto 15px;
+            }
+            @media screen and (max-width: $mobile-width) {
+                width: 54px;
+                height: 73px;
+                padding-top: 20.2%;
+                margin: 0 15px 0 0;
+            }
+        }
+
+        &WrapNoPhoto {
+          background-color: #F7F9FA;
+          background-image: url('/img/no-photo-square.svg');
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+    }
+  
+    &Info{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media screen and (max-width: $tablet-width) {
+            display: none;
+        }
+    }
+    &Name{
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        position: relative;
+
+        &:after{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 1px;
+            width: 10px;
+            background-color: #000106;;
+        }
+
+        &:hover:after {
+          left: 0;
+          animation-name: expandDecorateLine;
+          animation-duration: .4s;
+          animation-fill-mode: both;
+        }
+    }
+}
+.viewCount{
+    background-image: url("/img/icon-view.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 20px;
+    background-size: 14px 9px;
+    font-size: 16px;
+    line-height: 16px;
+}
+.date{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    margin-right: 20px;
+}
+
+.qaTextItem{
+    position: relative;
+    padding: 25px 30px 30px;
+    border: 1px solid #ECF0F2;
+    @media screen and (max-width: $mobile-width) {
+        padding: 0 0 30px;
+        border: none;
+    }
+    @media screen and (max-width: $mobile-width) {
+        position: static;
+        padding-bottom: 0;
+    }
+    &QuestionTitle{
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 30px;
+        margin-bottom: 15px;
+        margin-top: 0;
+
+        &Inner {
+          background-image: linear-gradient(var(--color),var(--color));
+          background-size: 0 1px;
+          background-repeat: no-repeat;
+          background-position: 0 100%;
+          transition: background-size .5s linear;
+        }
+
+        &:hover &Inner {
+          background-size: 100% 1px;
+        }
+
+        @media screen and (max-width: $tablet-width) {
+            font-size: 16px;
+            line-height: 26px;
+        }
+    }
+    &Answer{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        margin-bottom: 27px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        text-overflow: ellipsis;
+
+        p {
+          margin-top: 0;
+        }
+
+        @media screen and (max-width: $tablet-width) {
+            font-size: 14px;
+            line-height: 22px;
+        }
+        @media screen and (max-width: $mobile-width) {
+            -webkit-line-clamp: 4;
+        }
+    
+        &Active {
+            overflow: auto;
+            -webkit-line-clamp: unset;
+        }
+    }
+    &BtnMore{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border: none;
+        outline: none;
+        margin-bottom: -1px;
+        padding: 0;
+        height: 30px;
+        width: 100%;
+        cursor: pointer;
+        background-color: #F7F9FA;
+        background-image: url("/img/icon-arrow-bottom.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 15px 7px;
+        @media screen and (max-width: $mobile-width) {
+            border-radius: 0 0 7px 7px;
+        }
+    
+        &Active {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+@keyframes expandDecorateLine {
+  from {
+    width: 10px
+  }
+  to {
+    width: 100%
+  }
+}

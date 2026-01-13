@@ -1,0 +1,39 @@
+@import 'styles/media';
+
+.ttl {
+    margin: 0;
+    padding: 12px 40px 14px;
+    font-size: 1.33em;
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--light-back);
+    border-radius: 10px 10px 0 0;
+    
+    &Left {
+        text-align: left;
+    }
+}
+
+.cnr {
+    min-height: 58vh;
+    padding: 40px 40px 92px;
+    margin-bottom: 20px;
+    background-color: #FFF;
+    border-radius: 0 0 10px 10px;
+}
+
+.transp {
+    background-color: transparent;
+}
+
+@media screen and (max-width: $sm-desktop-width) {
+    .ttl {
+        font-size: 1.25em;
+        padding: 7px 24px 8px;
+    }
+    
+    .cnr {
+        padding: 30px 24px 50px;
+        margin-bottom: 20px;
+    }
+}

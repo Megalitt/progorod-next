@@ -1,0 +1,65 @@
+.modalMenu {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  list-style: none;
+  text-decoration: none;
+  margin-top: 15px;
+  padding-left: 0;
+  margin: 0;
+}
+
+.modalMenuItem {
+  width: 180px;
+  margin: 12px 10px 0 0;
+}
+
+.modalMenuLink {
+  display: inline-block;
+  text-decoration: none;
+  color: #000106;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 13px;
+    height: 1px;
+    background-color: var(--color);
+    position: absolute;
+    bottom: 2px;
+    opacity: 0;
+    transition: left .4s
+  }
+
+  &:hover::before {
+    right: 28px;
+    opacity: 1;
+    animation-name: moveDecorateLine;
+    animation-duration: .4s;
+    animation-fill-mode: both
+  }
+
+  &:active::before {
+    left: 28px;
+    opacity: 1;
+    animation-name: expandDecorateLine;
+    animation-duration: .4s;
+    animation-fill-mode: both
+  }
+}
+
+
+@keyframes moveDecorateLine {
+  from {right: 0}
+  to {right: calc(100% - 14px)}
+}
+
+@keyframes expandDecorateLine {
+  from {width: 13px}
+  to {width: calc(100%)}
+}

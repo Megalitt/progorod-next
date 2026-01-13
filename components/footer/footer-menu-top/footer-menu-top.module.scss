@@ -1,0 +1,23 @@
+@import 'styles/media';
+
+.ftrTopLst {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(70px, 170px));
+  grid-column-gap: 1%;
+}
+
+@media screen and (max-width: $sm-desktop-width) {
+  .ftrTopLst {
+    grid-template-columns: repeat(3, minmax(70px, 170px));
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+  .ftrTopLst {
+    display: block;
+  }
+}
+

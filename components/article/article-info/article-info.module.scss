@@ -1,0 +1,96 @@
+@import 'styles/media';
+
+.articleInfo{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    padding: 8px 0;
+    margin: 0;
+    @media  screen and (max-width: $tablet-width) {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    @media  screen and (max-width: $mobile-width) {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding-bottom: 0;
+        margin-bottom: 8px;
+    }
+    &Item{
+        list-style: none;
+        margin-right: 20px;
+        
+        &:last-of-type {
+            margin-right: 0;
+        }
+        
+        @media  screen and (max-width: $tablet-width) {
+            margin-right: 16px;
+        }
+    }
+    &CommentCount{
+        display: block;
+        padding-left: 20px;
+        background-image: url("/img/icon-comment.svg");
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 14px auto;
+        min-width: 28px;
+        height: 30px;
+        opacity: 0;
+        transition: all .5s;
+
+        &Loaded {
+          opacity: 1;
+        }
+    }
+
+    &Date span {
+      margin-left: 20px;
+    }
+
+    &View {
+        display: block;
+        padding-left: 20px;
+        background-image: url("/img/icon-view.svg");
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 14px auto;
+    }
+    &Author{
+        position: relative;
+        display: block;
+        font-weight: 700;
+        color: var(--color);
+        text-decoration: none;
+        outline: none;
+        cursor: pointer;
+        
+        &:after{
+            content: "";
+            width: 10px;
+            height: 1px;
+            background-color: var(--color);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    
+        &:hover {
+            &::after{
+                left: 0;
+                animation-name: expandDecorateLine;
+                animation-duration: 0.4s;
+                animation-fill-mode: both;
+            }
+        }
+    }
+}
+
+@keyframes expandDecorateLine {
+    from {width: 10px}
+    to {width: 100%}
+}

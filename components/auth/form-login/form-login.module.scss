@@ -1,0 +1,74 @@
+@import '../../../styles/media';
+
+.formLogin {
+    padding: 30px 20px 0 20px;
+
+    &Footer {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 30px;
+        padding-bottom: 26px;
+    }
+
+    &Btn {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        font-size: 16px;
+        line-height: 15px;
+
+        &::before {
+            content: "";
+            width: 8px;
+            height: 1px;
+            background-color: var(--color);
+            position: absolute;
+            bottom: -2px;
+            opacity: 0;
+            transition: left 0.4s;
+        }
+
+        &:hover::before {
+            right: 28px;
+            opacity: 1;
+            animation-name: moveDecorateLine;
+            animation-duration: 0.4s;
+            animation-fill-mode: both;
+        }
+    }
+
+    &Field {
+        margin-bottom: 10px;
+    }
+
+    &Field span {
+        right: 20px;
+        bottom: 16px;
+        left: auto;
+    }
+
+    &Submit {
+        display: block;
+        margin: 20px auto 0 auto;
+    }
+}
+
+
+@keyframes moveDecorateLine {
+    from {right: 28px}
+    to {right: calc(100% - 14px)}
+}
+
+
+@media screen and (max-width: $mobile-width) {
+    .formLogin {
+        padding-top: 28px;
+    }
+
+    .formLoginSubmit {
+        min-width: auto;
+        max-width: 232px;
+        width: 100%;
+    }
+}

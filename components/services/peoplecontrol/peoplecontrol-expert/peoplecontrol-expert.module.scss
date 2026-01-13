@@ -1,0 +1,52 @@
+.expert {
+    margin: 0 -40px;
+    padding-bottom: 14px;
+    background-color: var(--light-back);
+    display: block;
+    
+    &ImgWrap {
+        flex-shrink: 0;
+        width: 18%;
+        margin-right: 30px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+    &Img {
+        display: block;
+    }
+    
+    &Descr {
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 16px;
+        padding: 5px 9px;
+        border: 1px solid var(--back);
+        border-radius: 15px;
+        background-color: var(--light-back);
+        text-align: center;
+    }
+    
+    &Name {
+        margin: 0 15px 10px 0;
+        font-size: 20px;
+    }
+    
+    &InfoWrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+}
+
+.flex {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    background-color: #FFF;
+    margin: 0 14px;
+    padding: 56px 56px 60px;
+    border-radius: 10px;
+    overflow: hidden;
+}

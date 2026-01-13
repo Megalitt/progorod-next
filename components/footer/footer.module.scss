@@ -1,0 +1,120 @@
+@import 'styles/media';
+
+.ftr {
+    font-size: 12px;
+    padding-top: 62px;
+    background-color: var(--back);
+    position: relative;
+
+    &Top {
+        padding: 24px 0 27px;
+        background-color: var(--light-back);
+    }
+
+    &FlexRow {
+      display: flex;
+    }
+
+    &SocialList {
+      margin-top: 0;
+      width: auto;
+    }
+
+    &SocialListTitle {
+      margin-left: 12px;
+      font-size: 15px;
+    }
+
+    &Btm {
+        padding: 22px 0 42px;
+    }
+
+    &Info {
+        border-top: 1px solid var(--dark-back);
+        border-bottom: 1px solid var(--dark-back);
+        margin-bottom: 8px;
+
+        &Btn {
+            padding: 8px 12px 8px 0;
+            font: inherit;
+            background-color: transparent;
+            cursor: pointer;
+            border: none;
+            box-shadow: none;
+            position: relative;
+
+            &::before {
+                content: "";
+                width: 10px;
+                height: 10px;
+                background-image: url("/img/icon-footer-arrow.svg");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                position: absolute;
+                top: calc(50% - 4px);
+                right: 0;
+                transition: transform .4s;
+            }
+
+            &.opened {
+                &::before {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+
+        &Wrap {
+            padding-bottom: 8px;
+
+            p {
+                margin: 10px 0;
+            }
+        }
+    }
+
+    &Censor {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: $sm-tablet-width) {
+  .ftrSocialListTitle {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+    .ftr {
+
+        &Top {
+            padding: 15px 20px 5px;
+
+            > div {
+                min-width: 280px;
+            }
+        }
+
+        &FlexRow {
+          flex-direction: column;
+        }
+
+        &SocialListTitle {
+          margin-left: 0;
+          margin-top: 20px;
+        }
+
+        &SocialList {
+          margin-bottom: 8px;
+        }
+
+        &Info {
+            padding: 0 20px;
+        }
+
+        &Censor {
+            padding: 0 20px;
+        }
+    }
+}

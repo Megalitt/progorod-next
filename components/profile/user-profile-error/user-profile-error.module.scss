@@ -1,0 +1,30 @@
+@import 'styles/media';
+
+.userProfileError {
+  padding: 40px 40px 25px 40px;
+  margin-bottom: 40px;
+  background-color: #FFF;
+  border-radius: 0 0 10px 10px;
+
+  a {
+    color: var(--primary);
+    transition: color 0.4s;
+
+    &:hover {
+        color: var(--primary-light);
+    }
+  }
+}
+
+@media screen and (max-width: $sm-desktop-width) {
+  .userProfileError {
+      padding: 30px 24px 25px 30px;
+      margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+  .userProfileError {
+      display: block;
+  }
+}

@@ -1,0 +1,17 @@
+.metrics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  &Container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    & * {
+        margin: 10px;
+    }
+  }
+  &ContainerHide {
+    display: none;
+  }
+}

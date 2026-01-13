@@ -1,0 +1,34 @@
+.sliderNextArrow {
+    width: 33px;
+    height: 31px;
+    border-radius: 5px;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #FFF;
+    position: absolute;
+    top: -56px;
+    right: 10px;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("/img/icon-arrow-next.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: opacity .4s;
+    }
+
+    &:hover:after,
+    &:active:after {
+        opacity: 0.37;
+        transition: opacity .4s;
+    }
+
+}

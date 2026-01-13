@@ -1,0 +1,33 @@
+@import '../../../styles/media';
+
+.formUserPhoto {
+    text-align: center;
+    align-self: center;
+
+    & &Submit label {
+        font-size: 12px;
+        font-weight: normal;
+        padding: 5px 12px;
+        background-color: var(--back);
+        border-radius: 100px;
+        transition: all .4s;
+
+        &:hover {
+            background-color: var(--light-back);
+        }
+
+        &::before {
+            display: none;
+        }
+    }
+}
+
+
+@media screen and (max-width: $sm-desktop-width) {
+    .formUserPhoto {
+        & &Submit label {
+            background-color: #ffffff;
+            border: 1px solid var(--back);
+        }
+    }
+}

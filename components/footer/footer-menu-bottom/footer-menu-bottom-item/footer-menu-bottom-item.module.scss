@@ -1,0 +1,29 @@
+@import 'styles/media';
+
+.ftrBtmLstItem {
+  padding: 3px 0;
+
+  &Lnk {
+    &:focus-visible {
+        outline: 1px solid var(--color);
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+  .ftrBtmLstItem {
+    &Item {
+      margin-bottom: 7px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    &Lnk {
+      display: block;
+      padding: 6px 0;
+      margin-bottom: 10px;
+      margin-top: -11px;
+    }
+  }
+}

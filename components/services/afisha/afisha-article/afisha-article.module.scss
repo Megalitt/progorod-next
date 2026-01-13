@@ -1,0 +1,130 @@
+@import '../../../../styles/media';
+
+.article{
+    background-color: #FFF;
+    padding: 36px 70px 0;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    @media  screen and (max-width: $sm-desktop-width) {
+        padding: 36px 32px 0;
+    }
+    @media  screen and (max-width: $mobile-width) {
+        padding: 18px 16px 0;
+    }
+    
+    &Loading {
+        display: flex;
+        align-items: center;
+        min-height: 500px;
+        
+        @media  screen and (max-width: $sm-desktop-width) {
+            min-height: 200px;
+        }
+    }
+    
+    h1{
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 50px;
+        color: var(--color);
+        padding: 0;
+        margin: 0 0 20px;
+        @media  screen and (max-width: $mobile-width) {
+            font-size: 22px;
+            line-height: 33px;
+        }
+    }
+    blockquote{
+        position: relative;
+        padding: 0 0 0 14px;
+        margin-left: 25px;
+        color: var(--color);
+        &:after{
+            content: "";
+            width: 2px;
+            height: auto;
+            position: absolute;
+            bottom: 0;
+            top: 0;
+            left: 0;
+            background-color: var(--color);
+        }
+    }
+    strong{
+        img{
+            margin-right: 20px;
+        }
+    }
+    
+    &Body a {
+        color: var(--primary);
+        
+        &:hover {
+            color: var(--primary-light);
+        }
+    }
+
+    &Body * {
+      font-family: var(--main-font) !important;
+      font-size: 18px !important;
+      line-height: 30px !important;
+
+      @media  screen and (max-width: $sm-desktop-width) {
+        font-size: 16px !important;
+        line-height: 26px !important;
+      }
+    }
+    
+    &BtnEdit {
+        margin-bottom: 10px;
+    }
+    
+    &Body img {
+        width: auto !important;
+        height: auto !important;
+    }
+    
+    &ImgWrap{
+        display: block;
+        padding-top: 53.572%;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        @media  screen and (max-width: $mobile-width) {
+            margin-bottom: 20px;
+        }
+    }
+    &Img{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    &ImgAuthor{
+        position: absolute;
+        bottom: 10px;
+        right: 14px;
+        z-index: 3;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+        color: #FFFFFF;
+        text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.25);
+        
+    }
+    
+    &Footer {
+        padding: 35px 0;
+        
+     &Title {
+         display: block;
+         margin-bottom: 32px;
+         font-size: 24px;
+         font-weight: bold;
+     }
+    }
+}

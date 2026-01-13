@@ -1,0 +1,122 @@
+@import '../../../../styles/media';
+
+.qaTextItem{
+    padding: 50px 70px 50px;
+    margin-bottom: 14px;
+    background-color: #FFF;
+    border: 1px solid #ECF0F2;
+    position: relative;
+    
+    @media screen and (max-width: 1200px) {
+        padding: 35px 32px;
+    }
+    
+    @media screen and (max-width: $sm-tablet-width) {
+        padding: 20px 17px;
+        margin: 0 32px 7px;
+    }
+    
+    @media screen and (max-width: $mobile-width) {
+        padding: 0 0 30px;
+        border: none;
+    }
+    @media screen and (max-width: $mobile-width) {
+        position: static;
+        padding-bottom: 0;
+    }
+    &Wrap{
+        @media screen and (max-width: $sm-tablet-width) {
+            padding: 20px 17px 0;
+        }
+    }
+    
+    &QuestionTitle {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 30px;
+        margin-bottom: 25px;
+
+        &Inner {
+          background-image: linear-gradient(var(--color),var(--color));
+          background-size: 0 1px;
+          background-repeat: no-repeat;
+          background-position: 0 100%;
+          transition: background-size .5s linear;
+        }
+
+        &:hover &Inner {
+          background-size: 100% 1px;
+        }
+        
+        @media screen and (max-width: $tablet-width) {
+            font-size: 16px;
+            line-height: 26px;
+        }
+    }
+    
+    &Answer{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        margin-bottom: 27px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        text-overflow: ellipsis;
+        @media screen and (max-width: $tablet-width) {
+            font-size: 14px;
+            line-height: 22px;
+        }
+        @media screen and (max-width: $mobile-width) {
+            -webkit-line-clamp: 4;
+        }
+        
+        &Active {
+            overflow: auto;
+            -webkit-line-clamp: unset;
+        }
+    }
+    
+    &BtnMore{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        border: none;
+        outline: none;
+        margin-bottom: -1px;
+        padding: 0;
+        height: 30px;
+        width: 100%;
+        cursor: pointer;
+        background-color: #F7F9FA;
+        background-image: url("/img/icon-arrow-bottom.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 15px 7px;
+    
+        &Active {
+            transform: rotate(180deg);
+        }
+    
+        @media screen and (max-width: $mobile-width) {
+            border-radius: 0 0 7px 7px;
+        }
+        
+        &Wrap {
+            position: relative;
+            height: 30px;
+        }
+    }
+}
+
+@keyframes expandDecorateLine {
+  from {
+    width: 10px
+  }
+  to {
+    width: 100%
+  }
+}

@@ -1,0 +1,40 @@
+@import 'styles/media';
+
+.err {
+    height: 58vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    
+    &Wrap {
+        margin-bottom: 1em;
+    }
+    
+    q {
+        display: block;
+        font-size: 1.69em;
+        font-weight: bold;
+        margin-bottom: 1em;
+        
+        &::before,
+        &::after {
+            content: "";
+        }
+    }
+    
+    cite {
+        display: block;
+        font-size: 0.84rem;
+        font-style: normal;
+    }
+}
+
+@media screen and (max-width: $sm-desktop-width) {
+    .err {
+        q {
+            font-size: 1.127em;
+        }
+    }
+}

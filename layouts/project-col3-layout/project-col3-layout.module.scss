@@ -1,0 +1,114 @@
+@import 'styles/media';
+
+.grid {
+    display: grid;
+    grid-template-columns:  260px  calc(100% - 260px - 20px);
+    grid-column-gap: 20px;
+    align-items: flex-start;
+    
+    @media  screen and (max-width: 1167px) {
+        grid-template-columns: 200px calc(100% - 200px - 10px);
+        grid-column-gap: 10px;
+    }
+    
+    @media  screen and (max-width: $sm-desktop-width) {
+        grid-template-columns:  260px  calc(100% - 260px - 20px);
+        grid-column-gap: 20px;
+    }
+    
+    @media  screen and (max-width: 867px) {
+        grid-template-columns: 180px calc(100% - 180px - 10px);
+        grid-column-gap: 10px;
+    }
+    
+    @media  screen and (max-width: $tablet-width) {
+        grid-template-columns:  100%;
+    }
+}
+
+.colLeft {
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+    
+    @media screen and (max-width: $tablet-width) {
+        display: none;
+    }
+}
+
+.row {
+    display: grid;
+    grid-template-columns: calc(100% - 280px - 20px) 280px;
+    grid-column-gap: 20px;
+    align-items: stretch;
+    margin-bottom: 20px;
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
+    
+    @media  screen and (max-width: 1167px) {
+        grid-template-columns: calc(100% - 200px - 10px) 200px;
+        grid-column-gap: 10px;
+    }
+    
+    @media  screen and (max-width: $sm-desktop-width) {
+        grid-template-columns: 100%;
+    }
+
+    @media screen and (max-width: $md-tablet-width) { 
+        margin-bottom: 15px;
+     }
+}
+
+.contentRightStretch {
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    
+    @media  screen and (max-width: $sm-desktop-width){
+        display: none;
+    }
+}
+.contentRight {
+    @media  screen and (max-width: $sm-desktop-width){
+        display: none;
+    }
+}
+
+.btnReadAllNews {
+  display: none;
+  border-radius: 7px;
+  max-width: 225px;
+  width: 100%;
+  min-height: 38px;
+  padding: 12px 20px;
+  color: #FFF;
+  font-size: 0.89rem;
+  line-height: 1;
+  background-color: var(--primary);
+  transition: background-color 0.4s;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+
+  &:hover {
+    background-color: var(--primary-light);
+  }
+
+  &:focus-visible {
+      outline: 1px solid var(--primary-dark);
+  }
+
+  &:active {
+      background-color: var(--primary-dark);
+  }
+
+  @media  screen and (max-width: $tablet-width){
+    display: block;
+    margin: 18px auto 0 auto;
+  }
+}

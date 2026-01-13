@@ -1,0 +1,53 @@
+@import 'styles/media';
+
+.articleVoteProgress {
+  font-size: 16px;
+  line-height: 26px;
+  margin-bottom: 20px;
+  position: relative;
+  margin-right: 33px;
+
+  &Bg {
+      display: block;
+      margin-top: 4px;
+      border-radius: 5px;
+      border: 1px solid var(--back);
+      height: 36px;
+      overflow: hidden;
+  }
+
+  &Bar{
+      height: 36px;
+      background-color: var(--light-back);
+      transition: width 1s;
+      border-radius: 5px;
+
+      &Active {
+          background-color: var(--primary);
+          transition: width 1s;
+          height: 34px;
+          border-radius: 5px;
+      }
+  }
+
+  &Value {
+    position: absolute;
+    right: -38px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 20px;
+    bottom: 8px;
+    text-align: left;
+    width: 33px;
+  }
+}
+
+@media  screen and (max-width: $md-tablet-width) {
+    .articleVoteProgress {
+      margin-bottom: 23px;
+
+      &Bg {
+        margin-top: 8px;
+      }
+    }
+  }

@@ -1,0 +1,161 @@
+@import 'styles/media';
+
+.nv {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-size: 0.89rem;
+    font-weight: bold;
+    flex-wrap: wrap;
+    
+    &Lk {
+        display: block;
+        padding: 5px 28px;
+        line-height: 1;
+        position: relative;
+    
+        &::before {
+            content: "";
+            width: 13px;
+            height: 1px;
+            background-color: var(--color);
+            position: absolute;
+            bottom: 2px;
+            opacity: 0;
+            transition: left .4s;
+        }
+        
+        &:hover {
+            &::before {
+                right: 28px;
+                opacity: 1;
+                animation-name: moveDecorateLine;
+                animation-duration: 0.4s;
+                animation-fill-mode: both;
+            }
+        }
+    
+        &:active {
+            &::before {
+                left: 28px;
+                opacity: 1;
+                animation-name: expandDecorateLine;
+                animation-duration: 0.4s;
+                animation-fill-mode: both;
+            }
+        }
+        
+        &.active {
+            pointer-events: none;
+            
+            &::before {
+                left: 28px;
+                opacity: 1;
+            }
+        }
+    
+        &:not(.active):focus-visible {
+            outline: 1px solid var(--color);
+        }
+    }
+}
+
+.nvMobileNav .nv {
+  text-align: left;
+
+  &Lk.active {
+    background-color: var(--light-back);
+    
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.nvMobileNav .nvAdaptive {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.nvMobileNav li {
+  width: calc(100% + 80px);
+  margin: 0 -40px;
+}
+
+.nvMobileNav .nvLk {
+  width: 100%;
+  padding: 40px 40px 30px;
+  font-size: 1.69em;
+  font-weight: normal;
+}
+
+@media screen and (max-width: $sm-desktop-width) {
+  .nv {
+    text-align: left;
+
+    &MobileNav {
+      display: block;
+    }
+    
+    li {
+      width: calc(100% + 80px);
+      margin: 0 -40px;
+    }
+
+    &Lk {
+      width: 100%;
+      padding: 40px 40px 30px;
+      font-size: 1.69em;
+      font-weight: normal;
+
+      &:hover::before,
+      &:active::before {
+        display: none;
+      }
+
+      &.active {
+        background-color: var(--light-back);
+        
+        &::before {
+            display: none;
+        }
+      }
+    }
+
+    &Main {
+      display: none;
+    }
+
+    &Adaptive {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}
+
+@media screen and (max-width: $sm-tablet-width) {
+    .nv {
+        li {
+            width: calc(100% + 40px);
+            margin: 0 -20px;
+        }
+    
+        &Lk {
+            width: 100%;
+            padding: 20px;
+            font-size: 1em;
+        }
+    }
+}
+
+@keyframes moveDecorateLine {
+    from {right: 28px}
+    to {right: calc(100% - 41px)}
+}
+
+@keyframes expandDecorateLine {
+    from {width: 13px}
+    to {width: calc(100% - 56px)}
+}

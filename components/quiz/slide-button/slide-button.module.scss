@@ -1,0 +1,24 @@
+.slideButton {
+  display: block;
+  width: 100%;
+  padding: 7px 10px;
+  margin-top: -1px;
+  font: inherit;
+  text-align: left;
+  background-color: transparent;
+  border: 1px solid var(--disabled);
+  cursor: pointer;
+  transition: background-color .4s;
+  
+  &:first-of-type {
+      border-radius: 10px 10px 0 0;
+  }
+
+  &:last-of-type {
+      border-radius: 0 0 10px 10px;
+  }
+  
+  &:hover {
+      background-color: var(--light-back);
+  }
+}

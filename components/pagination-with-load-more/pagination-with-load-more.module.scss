@@ -1,0 +1,12 @@
+@import 'styles/media';
+
+.paginationWithLoadMoreBtn {
+  display: none;
+  margin-top: 24px;
+}
+
+@media  screen and (max-width: $mobile-width) {
+  .paginationWithLoadMoreBtn {
+    display: block;
+  }
+}

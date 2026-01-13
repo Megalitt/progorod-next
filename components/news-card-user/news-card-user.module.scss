@@ -1,0 +1,206 @@
+@import 'styles/media';
+
+.newsUser{
+   height: 380px;
+   background-color: #fff;
+   border-radius: 10px;
+   overflow: hidden;
+   position: relative;
+
+  @media screen and (max-width: $md-tablet-width) {
+    height: 125px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    width: calc(100% - 48px);
+    margin: 0 auto;
+    height: auto;
+  }
+
+   &Link{
+    color: var(--color);
+
+    @media screen and (max-width: $md-tablet-width) {
+      display: grid;
+      grid-template-columns: 171px 3fr 1fr;
+      grid-template-areas:
+          "img title title"
+          "img time comments ";
+      grid-gap: 14px 15px;
+      padding: 11px;
+    }
+
+    @media screen and (max-width: $mobile-width) {
+      grid-template-columns: 2fr 1.2fr 3fr;
+      grid-template-areas:
+          "img img img "
+          "title title title"
+          "time comments . ";
+      padding: 0 0 14px;
+      grid-gap: 14px 5px;
+    }
+
+    &:hover .newsUserTitleInner {
+        background-size: 100% 1px;
+      }
+  }
+
+  &ImgInner {
+    align-self: center;
+    grid-area: img;
+
+  }
+
+  &ImgWrap{
+    display: block;
+    position: relative;
+    padding-top: 58.93%;
+
+    @media screen and (max-width: $md-tablet-width) {
+      border-radius: 10px;
+      overflow: hidden;
+    }
+  }
+
+  &ImgWrapNoImage {
+    background-image: url("/img/no-photo-horizontal.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #F7F9FA;
+  }
+
+  &Img{
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+  }
+
+  &Img::after {  
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+  }
+
+  &Title {
+    margin: 21px 15px 11px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    max-height: 11rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    text-overflow: ellipsis;
+
+    @media screen and (max-width: $md-tablet-width) {
+      grid-area: title;
+      -webkit-line-clamp: 2;
+      margin: 0;
+    }
+
+    @media screen and (max-width: $mobile-width) {
+      padding: 0 20px;
+      max-height: 100%;
+      overflow: visible;
+      display: block;
+    }
+    
+      &Inner {
+          background-image: linear-gradient(var(--color), var(--color));
+          background-size: 0 1px;
+          background-repeat: no-repeat;
+          background-position: 0 100%;
+          transition: background-size .5s linear;
+      }
+  }
+
+  &Info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    @media screen and (max-width: $md-tablet-width) {
+      padding: 0;
+      position: static;
+      grid-area: time;
+    }
+
+    @media screen and (max-width: $mobile-width) {
+      padding-left: 20px;
+    }
+  }
+
+  &Time, &Comments {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    margin-top: auto;
+
+    @media screen and (max-width: $mobile-width) {
+      font-size: 12px;
+      flex-grow: 0;
+    }
+  }
+
+  &TimeYesterdayHidden {
+    @media screen and (max-width: $mobile-width) {
+      display: none;
+    }
+  }
+
+  &Comments{
+    grid-area: comments;
+    background-image: url("/img/icon-comment.svg");
+    background-repeat: no-repeat;
+    background-position: top 8px left;
+    margin-left: 10px;
+    padding-left: 18px;
+  }
+
+  &Icon{
+    position: relative;
+    bottom: -2px;
+    margin: 0 5px 0 15px;
+
+    @media screen and (max-width: $mobile-width) {
+      margin-left: 11px;
+    }
+  }
+
+  &Tag{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    max-width: 145px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    padding: 5px 9px;
+    border: 1px solid var(--back);
+    border-radius: 15px;
+    background-color: var(--light-back);
+    text-align: center;
+    transition: .4s;
+
+
+    @media screen and (max-width: $mobile-width) {
+      font-size: 12px;
+      bottom: 14px;
+      right: 14px;
+      padding: 7px 24px;
+    }
+  }
+}

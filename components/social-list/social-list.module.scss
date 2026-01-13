@@ -1,0 +1,68 @@
+@import 'styles/media';
+
+.socialList {
+  display: flex;
+  margin-top: 22px;
+  width: 200px;
+  flex-wrap: wrap;
+
+    &Link {
+      display: block;
+      width: 50px;
+      height: 40px;
+      background-repeat: no-repeat;
+      background-position: center;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    &LinkVk {
+        background-image: url("/img/icon-vk.svg");
+        background-size: 24px;
+    }
+
+    &LinkYoutube {
+        background-image: url("/img/icon-youtube.svg");
+        background-size: 24px;
+    } 
+    
+    &LinkOdn {
+        background-image: url("/img/icon-odn.svg");
+        background-size: 14px;
+    }
+
+    &LinkInst {
+        background-image: url("/img/icon-inst.svg");
+        background-size: 18px;
+    }
+    
+    &LinkZen {
+        background-image: url("/img/icon-zen.svg");
+        background-size: 18px;
+    }
+
+    &LinkTw {
+      background-image: url("/img/icon-tw.svg");
+      background-size: 22px;
+    }
+
+    &LinkTm {
+      background-image: url("/img/icon-tm.svg");
+      background-size: 30px;
+    }
+}
+
+
+@media screen and (max-width: $mobile-width) {
+    .socialList {
+        width: 120px !important;
+        justify-content: space-between;
+
+        &Link {
+            width: 30px;
+        }
+    }
+}
+
+
+

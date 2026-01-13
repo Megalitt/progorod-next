@@ -1,0 +1,90 @@
+@import 'styles/media';
+
+.pageTitle {
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    background-color: #FFF;
+    overflow: hidden;
+    border-radius: 10px;
+    text-align: center;
+    
+    @media screen and (max-width: $tablet-width) {
+        padding: 10px 20px;
+    }
+    
+    &Rubric {
+        background-color: var(--light-back);
+    }
+
+    &Redactor {
+      display: flex;
+      justify-content: center;
+    }
+
+    &Redactor h1 {
+      position: relative;
+
+      @media screen and (max-width: $tablet-width) {
+        padding-bottom: 25px;
+      }
+    }
+
+    &Redactor h1::after {
+      content: "";
+      display: block;
+      width: 19px;
+      height: 10px;
+      background-image: url("/img/icon-arrow-down-author-name.svg");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      position: absolute;
+      right: -36px;
+      margin-top: -4px;
+      top: 50%;
+
+      @media screen and (max-width: $tablet-width) {
+        width: 100%;
+        height: 10px;
+        background-size: 19px 10px;
+        background-position: center;
+        bottom: 5px;
+        left: 0;
+        right: 0;
+        top: auto;
+        margin-top: 0;
+      }
+    }
+    
+    &Descr {
+        padding: 10px 20px 15px;
+        margin: 0 -20px -15px;
+        font-size: 18px;
+        background-color: #FFF;
+    }
+    
+    &Tag {
+        margin-left: 7px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+        padding: 5px 9px;
+        border: 1px solid var(--back);
+        border-radius: 15px;
+        background-color: var(--light-back);
+        text-align: center;
+        
+        &:first-letter {
+            text-transform: uppercase;
+        }
+    }
+    
+    h1 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: bold;
+    
+        @media screen and (max-width: $tablet-width) {
+            font-size: 20px;
+        }
+    }
+}

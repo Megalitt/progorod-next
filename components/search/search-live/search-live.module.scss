@@ -1,0 +1,159 @@
+@import '../../../styles/media';
+
+.searchLive {
+    position: absolute;
+    top: 8px;
+    left: 15px;
+    right: 15px;
+    padding: 0 15px;
+    z-index: 210;
+    opacity: 0;
+    animation-name: searchLiveShow;
+    animation-duration: .4s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+
+    &CloseAnimate {
+        animation-name: searchLiveClose;
+        animation-duration: .4s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+    }
+
+    &Inner {
+        max-width: 1280px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding-top: 26px;
+        border-radius: 0 0 10px 10px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -48px;
+        overflow: hidden;
+    }
+
+    &Form {
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 18px;
+        position: relative;
+    }
+
+    &Input {
+        width: 100%;
+        border: none;
+        font-size: 16px;
+        color: var(--color);
+        height: 26px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    &Input:focus-visible {
+        outline: none;
+    }
+
+    &Submit {
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin: 0 5px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 19px;
+        position: absolute;
+        right: 15px;
+        top: -7px;
+        border: none;
+        background-color: transparent;
+        background-image: url("/img/icon-search.svg");
+        cursor: pointer;
+    }
+
+    &Shadow {
+        background-color: rgba(236, 240, 242, 0.5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 5;
+        animation-name: searchLiveShadowShow;
+        animation-duration: .2s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+    }
+
+    &ShadowCloseAnimate {
+        animation-name: searchLiveShadowClose;
+        animation-duration: .2s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+    }
+
+    &NotFound {
+        font-size: 16px;
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+
+@keyframes searchLiveShow {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes searchLiveClose {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@keyframes searchLiveShadowShow {
+    0% {
+        background-color: rgba(236, 240, 242, 0);
+    }
+    100% {
+        background-color: rgba(8, 15, 19, 0.5);
+    }
+}
+
+
+@keyframes searchLiveShadowClose {
+    0% {
+        background-color: rgba(8, 15, 19, 0.5);
+    }
+    100% {
+        background-color: rgba(236, 240, 242, 0);
+    }
+}
+
+
+@media screen and (max-width: $sm-desktop-width) {
+    .searchLive {
+        top: 28px;
+        padding: 0;
+        left: 0;
+        right: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: $tablet-width) {
+    .searchLive, .searchLiveShadow {
+        display: none;
+    }
+}

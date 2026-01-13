@@ -1,0 +1,64 @@
+@import '../../../styles/media';
+
+.searchMobile {
+    position: relative;
+    margin-left: -40px;
+    margin-right: -40px;
+    margin-top: 12px;
+
+    &Input {
+        border: 2px solid var(--back);
+        width: 100%;
+        font-size: 24px;
+        height: 76px;
+        padding-left: 40px;
+    }
+
+    &Input:focus {
+        outline: 1px solid var(--back);
+        background-color: var(--light-back);
+    }
+
+    &Btn {
+        width: 56px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border: none;
+        background-color: transparent;
+        background-image: url("/img/icon-search-gray.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+@media screen and (max-width: $sm-tablet-width) {
+    .searchMobile {
+        margin-left: -20px;
+        margin-right: -20px;
+
+        &Input {
+            padding-left: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: $mobile-width) {
+    .searchMobile {
+        margin-left: -20px;
+        margin-right: -20px;
+
+        &Input {
+            height: 46px;
+            font-size: 16px;
+            padding-left: 20px;
+            border-width: 1px;
+        }
+
+        &Btn {
+            width: 50px;
+            background-size: 16px;
+        }
+    }
+}

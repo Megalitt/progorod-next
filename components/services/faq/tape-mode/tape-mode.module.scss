@@ -1,0 +1,19 @@
+@import '../../../../styles/media';
+
+.tape {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media screen and (max-width: $mobile-width) {
+        background-color: var(--back);
+    }
+
+    &Row {
+      margin-bottom: 14px;
+
+      @media screen and (max-width: $mobile-width) {
+        margin-bottom: 7px;
+      }
+    }
+}

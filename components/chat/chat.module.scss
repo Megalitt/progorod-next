@@ -1,0 +1,26 @@
+.chat {
+    background-color: #FFF;
+    border-radius: 10px;
+    
+    &Top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px 0 24px;
+        background: var(--light-back);
+    }
+    
+    &Title {
+        margin: 20px 0;
+        font-size: 20px;
+        line-height: 1;
+    }
+    
+    &Bottom {
+        padding: 20px 24px;
+    }
+    
+    &Auth {
+        opacity: 0;
+    }
+}

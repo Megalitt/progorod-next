@@ -1,0 +1,78 @@
+@import '../../../../styles/media';
+
+.concursPhotoEnd {
+  position: relative;
+
+  &Winner::after {
+    content: '';
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-image: url("/img/icon-winner.svg");
+    background-repeat: no-repeat;
+  }
+
+  &ImgWrap {
+    display: block;
+    padding-top: 165%;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  &Img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+
+  &Info {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: auto;
+    padding: 10px 12px;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    background: linear-gradient(180deg,rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.81)) ;
+
+    > span {
+      max-height: 4rem;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      text-overflow: ellipsis;
+      margin-bottom: 10px;
+    }
+    
+    &CountActive {
+      display: block;
+      font-size: 24px;
+      line-height: 32px;
+      border: none;
+      background-color: transparent;
+      margin: 0 auto;
+      color: #FFFFFF;
+
+      b {
+        font-weight: 400;
+        padding-right: 30px;
+        background-image: url("/img/icon-heart.svg");
+        background-position: right center;
+        background-repeat: no-repeat;
+        background-size: 23px 27px;
+      }
+    }
+  }
+}

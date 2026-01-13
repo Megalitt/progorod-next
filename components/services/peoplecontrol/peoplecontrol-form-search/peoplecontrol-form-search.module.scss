@@ -1,0 +1,257 @@
+@import '../../../../styles/media';
+
+.formSearchComplaint {
+  display: grid;
+  grid-template-areas: "countComplaint filterDate filterCategory filterSubmit filterSend";
+  grid-template-columns: 200px 1fr 1fr auto auto;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 35px;
+  padding-right: 10px;
+  margin-bottom: 20px;
+  background-color: var(--light-back);
+  border-radius: 10px;
+
+  &Count {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 38px;
+    margin-right: 16px;
+    grid-area: countComplaint;
+  }
+
+  &DateFilter {
+    background-color: #ffffff;
+  }
+
+  &DateFilter, &Category {
+    margin-bottom: 0;
+  }
+
+  &Category {
+    border-radius: 0 7px 7px 0 !important;
+    grid-area: filterCategory;
+  }
+
+  &DayPicker,
+  &DayPickerClose {
+    animation-duration: .2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+
+  &DayPicker {
+    animation-name: DayPicker;
+    position: relative;
+    z-index: 1;
+  }
+
+  &DayPickerClose {
+    animation-name: DayPickerClose;
+  }
+
+  &DateFilter {
+    border-radius: 7px 0 0 7px;
+    margin-right: -1px;
+    transition: all .2s;
+    grid-area: filterDate;
+  }
+
+  &DateFilterInput {
+    width: 100%;
+    height: 47px;
+    padding: 13px 20px 14px;
+    position: relative;
+    background-color: transparent;
+    font-size: .89rem;
+    color: var(--disabled-text);
+    border: 1px solid var(--disabled);
+    text-align: left;
+    margin-bottom: 0;
+    border-radius: 7px 0 0 7px;
+    cursor: pointer;
+  }
+
+  &DateFilterInput::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    margin-top: -4px;
+    height: 8px;
+    width: 15px;
+    background-image: url(/img/icon-arrow-down.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .2s;
+  }
+
+  &DateFilterInputActive::after {
+    transform: rotate(-180deg);
+  }
+
+  &DateFilter:hover {
+    background-color: var(--disabled);
+    border-radius: 7px 0 0 0;
+  }
+
+  &DateFilterInputActive,
+  &DateFilter:active,  
+  &DateFilter:focus {
+    background-color: var(--light-back);
+  }
+
+  &DateFilterInputSelected {
+    color: var(--color);
+    background-color: var(--light-back);
+  }
+
+  &Category select {
+    border-radius: 0 7px 7px 0;
+    background-color: transparent;
+  }
+
+  &Submit {
+    min-width: 152px;
+    margin-left: 20px;
+    margin-right: 10px;
+    grid-area: filterSubmit;
+  }
+
+  &Send {
+    width: 100%;
+    max-width: 222px;
+    border: 1px solid var(--color);
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 100px;
+    text-align: center;
+    padding: 11px 50px;
+    line-height: 26px;
+    grid-area: filterSend;
+  }
+
+  &Active {
+    border-radius: 0 7px 0px 0 !important;
+  }
+}
+
+@media screen and (max-width: $md-desktop-width) {
+  .formSearchComplaint {
+    &Send {
+      padding-left: 25px;
+      padding-right: 25px;
+      max-width: 185px;
+    }
+  }
+}
+
+@media screen and (max-width: $sm-desktop-width) {
+  .formSearchComplaint {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 40px;
+    grid-template-areas:
+        "countComplaint countComplaint countComplaint countComplaint"
+        "filterDate filterDate filterCategory filterCategory"
+        "filterSubmit filterSend filterSend filterSend";
+    grid-template-columns: 162px auto auto;
+    background-color: #ffffff;
+    grid-column-gap: 10px;
+
+    &Count {
+      font-size: 20px;
+      line-height: 32px;
+      background-color: var(--light-back);
+      margin: -20px -24px 30px -24px;
+      border-radius: 10px 10px 0 0;
+      padding: 7px 24px;
+    }
+
+    &DateFilter {
+      background-color: var(--light-back);
+    }
+
+    &DateFilter input,
+    &DateFilter input:hover,
+    &DateFilter input:focus {
+      border-radius: 7px;
+    }
+
+    &Category select {
+      border-radius: 7px;
+      background-color: var(--light-back);
+    }
+
+    &DateFilter, &Category {
+      margin-bottom: 30px;
+      border-radius: 7px;
+    }
+
+    &Submit {
+      margin-left: 0;
+      min-height: 46px;
+      min-width: auto;
+      max-width: 142px;
+    }
+
+    &Send {
+      padding-top: 9px;
+      padding-bottom: 9px;
+    }
+  }
+}
+
+@media screen and (max-width: $md-tablet-width) {
+  .formSearchComplaint {
+    grid-template-areas:
+    "countComplaint"
+    "filterDate"
+    "filterCategory"
+    "filterSubmit"
+    "filterSend"
+    ;
+    grid-template-columns: 100%;
+
+    &Count {
+      background-color: transparent;
+      text-align: center;
+      margin-top: -10px;
+      margin-bottom: 15px;
+    }
+
+    &DateFilter {
+      margin-bottom: 10px;
+    }
+
+    &Submit,
+    &Send {
+      min-width: 232px;
+      margin: 0 auto;
+    }
+
+    &Submit {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+@keyframes DayPicker { 
+  0% { 
+    opacity: 0;
+  } 
+  100% {
+    opacity: 1;
+ }
+}
+
+@keyframes DayPickerClose { 
+  0% { 
+    opacity: 1;
+  } 
+  100% {
+    opacity: 0;
+ }
+}

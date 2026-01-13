@@ -1,0 +1,77 @@
+@import '../../../../styles/media';
+
+.tape {
+    &Link {
+        text-decoration: none;
+        cursor: pointer;
+        outline: none;
+        &:hover{
+            .tape-img__signature-top {
+                display: block;
+            }
+            .tape-img__signature-wrap {
+                background: linear-gradient(180deg,rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.81)) ;
+            }
+        }
+        &:active{
+            .tape-img__signature-top {
+                display: block;
+            }
+            .tape-img__signature-wrap {
+                background: linear-gradient(180deg,rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.81)) ;
+            }
+        }
+    }
+    
+    &Wrap {
+        display: block;
+        padding-top: 165%;
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    &WrapNoPhoto {
+      background-color: #F7F9FA;
+      background-image: url('/img/no-photo-square.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+    &Img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100% !important;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    &Info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 40px 12px 10px;
+        text-align: center;
+    }
+    
+    &Signature {
+        display: inline-block;
+        padding: 2px 9px;
+        font-size: 14px;
+        line-height: 16px;
+        background: #F7F9FA;
+        border: 1px solid #ECF0F2;
+        border-radius: 90px;
+        
+        @media screen and (max-width: $tablet-width) {
+            font-size: 12px;
+            line-height: 13px;
+        }
+        @media screen and (max-width: $mobile-width) {
+            font-size: 10px;
+            line-height: 11px;
+        }
+    }
+}

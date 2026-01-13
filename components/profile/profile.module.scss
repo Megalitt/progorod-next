@@ -1,0 +1,85 @@
+@import 'styles/media';
+
+.userProfile {
+
+    &Head {
+        position: relative;
+    }
+
+    &BtnLogout {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        margin-top: -16.5px;
+        width: 33px;
+        height: 33px;
+        background-image: url("/img/icon-close.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #fff;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+    }
+
+    &Title {
+        margin: 0;
+        padding: 12px 40px 14px;
+        font-size: 1.33em;
+        font-weight: bold;
+        background-color: var(--light-back);
+        border-radius: 10px 10px 0 0;
+        text-align: left;
+    }
+
+    &ContentLoading {
+        padding: 40px 40px 25px 40px;
+        margin-bottom: 40px;
+        background-color: #FFF;
+        border-radius: 0 0 10px 10px;
+    }
+
+    &CountArticles {
+      background-color: var(--light-back);
+      padding: 12px 40px 14px;
+      font-size: 1.33em;
+      font-weight: bold;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    &GridLoadBtn {
+      grid-column-end: 5;
+      grid-column-start: 1;
+
+      @media screen and (max-width: $sm-desktop-width) {
+        grid-column-end: 4;
+        grid-column-start: 1;
+      }
+    }
+
+    &GridArticles {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+
+      @media screen and (max-width: $sm-desktop-width) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media screen and (max-width: $md-tablet-width) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      
+    }
+
+   
+}
+
+@media screen and (max-width: $sm-desktop-width) {
+    .userProfileTitle {
+        font-size: 1.25em;
+        padding: 7px 24px 8px;
+        text-align: center;
+    }
+}

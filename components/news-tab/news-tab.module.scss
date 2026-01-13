@@ -1,0 +1,100 @@
+@import 'styles/media';
+
+.tabContent{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    
+    &Item{
+        position: relative;
+        border-bottom: 1px solid var(--back);
+        flex-grow: 1;
+
+        &Fever {
+          padding-bottom: 26px;
+          max-height: 25%;
+        }
+
+        &:first-child{
+            .tabContentLink{
+                padding-top: 24px;
+            }
+        }
+        &:nth-child(4){
+            border-bottom:1px solid transparent;
+        }
+        @media  screen and (max-width: $tablet-width){
+          padding-bottom: 31px;
+          flex-grow: 0;
+          max-height: none;
+
+            &:nth-child(4){
+                border-color: var(--back);
+            }
+            &:last-child{
+                border-color: transparent;
+            }
+        }
+
+        @media  screen and (max-width: $mobile-width){
+          padding-bottom: 31px;
+        }
+    }
+    &Link{
+        display: block;
+        padding: 20px 14px 0 24px;
+        color: var(--color);
+        @media  screen and (max-width: $mobile-width){
+            padding: 11px 17px 0 17px;
+        }
+    }
+    &Title{
+        padding: 0;
+        margin: 0;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        max-height: 4rem;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        text-overflow: ellipsis;
+
+        &Inner {
+            background-image: linear-gradient(var(--color), var(--color));
+            background-size: 0 1px;
+            background-repeat: no-repeat;
+            background-position: 0 100%;
+            transition: background-size .5s linear;
+        }
+
+        &:hover .tabContentTitleInner {
+            background-size: 100% 1px;
+        }
+
+        @media  screen and (max-width: $tablet-width){
+            display: block;
+            overflow: visible;
+            max-height: 100%;
+        }
+    }
+    &Time{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        padding-right: 14px;
+        text-align: right;
+        font-size: 12px;
+        line-height: 26px;
+        color: var(--primary);
+
+        @media  screen and (max-width: $mobile-width){
+            text-align: left;
+            padding-left: 17px;
+            margin-bottom: 5px;
+        }
+    }
+}

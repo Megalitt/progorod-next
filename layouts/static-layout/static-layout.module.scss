@@ -1,0 +1,14 @@
+@import 'styles/media';
+
+.static {
+    padding: 36px 70px 10px;
+    background-color: #FFF;
+    border-radius: 10px;
+    
+    @media  screen and (max-width: $sm-desktop-width) {
+        padding: 36px 32px 0;
+    }
+    @media  screen and (max-width: $mobile-width) {
+        padding: 18px 16px 0;
+    }
+}

@@ -1,0 +1,44 @@
+@import 'styles/media';
+
+.poster {
+    border: 1px solid var(--back);
+    border-radius: 10px;
+    font-size: 16px;
+    margin: 0 10px;
+
+    &Content {
+        padding: 15px 30px;
+        background-color: var(--light-back);
+        min-height: 175px;
+
+        @media  screen and (max-width: $mobile-width) {
+          background-color: #FFFFFF;
+          border: none;
+          padding: 19px;
+          font-size: 14px;
+          line-height: 22px;
+          border-radius: 7px;
+          min-height: 242px;
+          height: 242px;
+        }
+    }
+
+    &Text {
+        margin: 0;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        max-height: 140px;
+        -webkit-line-clamp: 5;
+        text-overflow: ellipsis;
+        @media  screen and (max-width: $mobile-width) {
+            -webkit-line-clamp: 9;
+            max-height: 240px;
+        }
+    }
+
+    @media  screen and (max-width: $mobile-width) {
+      margin: 0;
+      border: none;
+    }
+}

@@ -1,0 +1,293 @@
+@import '../../../../styles/media';
+
+.article {
+    width: 100%;
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 30px 70px 25px;
+    
+    @media screen and (max-width: $tablet-width) {
+        padding: 23px 32px 25px;
+    }
+    
+    @media screen and (max-width: $mobile-width) {
+        padding: 18px 15px 25px;
+    }
+    
+    &Title {
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 50px;
+        color: var(--color);
+        padding: 0;
+        margin: 0 0 20px;
+        @media  screen and (max-width: $sm-tablet-width) {
+            font-size: 22px;
+            line-height: 33px;
+        }
+    }
+    
+    &ImgWrap {
+        display: block;
+        padding-top: 53.572%;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        @media  screen and (max-width: $mobile-width) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &Time {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 5px;
+
+      span {
+        font-size: 16px;
+        font-weight: 400;
+        color: #000106;
+      }
+
+      @media screen and (max-width: $tablet-width) {
+        margin-bottom: 6px;
+
+        span {
+          font-size: 14px;
+        }
+      }
+
+      @media screen and (max-width: $tablet-width) {
+        justify-content: flex-start;
+        margin-bottom: 8px;
+      }
+    }
+
+    &Img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.expert {
+    @media screen and (max-width: $mobile-width) {
+        display: flex;
+        flex-direction: column;
+    }
+    &Info {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        grid-column-gap: 30px;
+        grid-template-areas:
+            "img tag"
+            "img name"
+            "img career"
+    ;
+        @media screen and (max-width: $tablet-width) {
+            grid-template-columns: 126px 1fr;
+            grid-column-gap: 43px;
+        }
+        @media screen and (max-width: $mobile-width) {
+            grid-template-columns: 1fr;
+            grid-column-gap: 0;
+            grid-row-gap: 5px;
+            text-align: center;
+            grid-template-areas:
+              "img"
+              "tag"
+              "name"
+              "career"
+        ;
+            order: 2;
+            position: relative;
+            padding-top: 40px;
+            &:before{
+                content: "";
+                position: absolute;
+                top: -7px;
+                right: -15px;
+                left: -15px;
+                height: 7px;
+                background-color: #ECF0F2;
+            }
+        }
+    }
+    
+    &Photo{
+        grid-area: img;
+    }
+    &Img{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        
+        &Wrap{
+            display: block;
+            padding-top: 135.72%;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            max-width: 140px;
+            @media screen and (max-width: $tablet-width) {
+                max-width: 126px;
+                padding-top: 122.15%;
+            }
+            @media screen and (max-width: $mobile-width) {
+                max-width: 118px;
+                margin: 0 auto;
+                padding-top: 41.56%;
+            }
+        }
+
+        &WrapNoPhoto {
+          background-color: #F7F9FA;
+          background-image: url('/img/no-photo-square.svg');
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        
+    }
+    
+    &Tag{
+        padding: 0 9px 2px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 26px;
+        color: #000106;
+        background-color: #F7F9FA;
+        border: 1px solid #ECF0F2;
+        border-radius: 90px;
+        @media screen and (max-width: $mobile-width) {
+            font-size: 12px;
+            line-height: 15px;
+        }
+        
+        &Wrap{
+            grid-area: tag;
+            @media screen and (max-width: $mobile-width) {
+                margin-top: 10px;
+            }
+        }
+    }
+    
+    &Name{
+        grid-area: name;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 38px;
+        @media screen and (max-width: $tablet-width) {
+            font-size: 20px;
+            line-height: 32px;
+        }
+        @media screen and (max-width: $mobile-width) {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+    
+    &Career{
+        grid-area: career;
+        font-size: 18px;
+        line-height: 30px;
+        @media screen and (max-width: $tablet-width) {
+            font-size: 16px;
+            line-height: 26px;
+        }
+        @media screen and (max-width: $mobile-width) {
+            font-size: 12px;
+            line-height: 20px;
+        }
+    }
+    &Text{
+        font-size: 18px;
+        line-height: 30px;
+        @media screen and (max-width: $tablet-width) {
+            font-size: 16px;
+            line-height: 26px;
+        }
+        @media screen and (max-width: $mobile-width) {
+            order: 1;
+            margin-bottom: 25px;
+        }
+    }
+    &Detail{
+        position: relative;
+        width: auto;
+        margin-left: -70px;
+        margin-right: -70px;
+        padding: 30px 70px;
+        background-color:  #F7F9FA;
+        @media screen and (max-width: $tablet-width) {
+            margin-left: -32px;
+            margin-right: -32px;
+            padding: 30px 32px;
+        }
+        @media screen and (max-width: $mobile-width) {
+            margin-left: -15px;
+            margin-right: -15px;
+            padding: 25px 15px;
+            order: 3;
+        }
+        &:after{
+            content: " ";
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            right: 0;
+            height: 25px;
+            background-color:  #F7F9FA;
+            border-radius: 0 0 10px 10px;
+        }
+        &Title{
+            display: block;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 30px;
+            margin-bottom: 20px;
+        }
+    }
+    &List{
+        padding: 0 0 0 20px;
+        margin: 0;
+        &Item{
+            margin-bottom: 15px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+    &Buttons{
+        margin-top: 40px;
+    
+        @media screen and (max-width: $sm-tablet-width) {
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        a {
+            @media screen and (max-width: $mobile-width) {
+                max-width: 90%;
+            }
+        }
+        
+        a:first-child {
+            margin-right: 30px;
+    
+            @media screen and (max-width: $sm-tablet-width) {
+                margin-right: 0;
+                margin-bottom: 12px;
+            }
+        }
+    }
+    &Wrap{
+        z-index: 2;
+    }
+}
