@@ -40,7 +40,7 @@ const SliderFaq: React.FC = React.memo(() => {
 
     setTimeout(() => {
       setRenderSlider(true);
-    }, 100);
+    }, 100); // отсрочка рендера слайдера, для исключения компоновки
   }, []);
 
   return (
