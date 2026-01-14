@@ -36,12 +36,11 @@ const SliderFaq: React.FC = React.memo(() => {
   useEffect(() => {
     setTimeout(() => {
       apiGetFaqSortByTime().then(({ data }: any) => setFaqData(data));
-      setRenderSlider(true);
     }, 0);
 
-    // setTimeout(() => {
-    //   setRenderSlider(true);
-    // }, 20);
+    setTimeout(() => {
+      setRenderSlider(true);
+    }, 10);
   }, []);
 
   return (

@@ -52,7 +52,7 @@ const SliderPeoplecontrol: React.FC = React.memo(() => {
 
     setTimeout(() => {
       setRenderSlider(true);
-    }, 0);
+    }, 10);
 
     return () => setIsMountedFlag(false);
   }, []);
