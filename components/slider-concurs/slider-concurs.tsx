@@ -41,7 +41,7 @@ const SliderConcurs: React.FC = React.memo(() => {
 
     setTimeout(() => {
       setRenderSlider(true);
-    }, 20);
+    }, 50);
   }, []);
 
   return (
