@@ -37,11 +37,12 @@ const SliderConcurs: React.FC = React.memo(() => {
     setTimeout(() => {
       // @ts-ignore
       apiGetPhotoConcurs().then((data) => setConcursData(data?.data));
+      setRenderSlider(true);
     }, 0);
 
-    setTimeout(() => {
-      setRenderSlider(true);
-    }, 20);
+    // setTimeout(() => {
+    //   setRenderSlider(true);
+    // }, 20);
   }, []);
 
   return (

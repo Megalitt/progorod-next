@@ -36,11 +36,12 @@ const SliderAfisha: React.FC = React.memo(() => {
   useEffect(() => {
     setTimeout(() => {
       apiGetAfishaForMainPage().then((data) => setAfishaData(data));
+      setRenderSlider(true);
     }, 0);
 
-    setTimeout(() => {
-      setRenderSlider(true);
-    }, 20);
+    // setTimeout(() => {
+    //   setRenderSlider(true);
+    // }, 20);
   }, []);
 
   return (
