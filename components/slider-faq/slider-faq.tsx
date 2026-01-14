@@ -40,7 +40,7 @@ const SliderFaq: React.FC = React.memo(() => {
 
     setTimeout(() => {
       setRenderSlider(true);
-    }, 10);
+    }, 30);
   }, []);
 
   return (
