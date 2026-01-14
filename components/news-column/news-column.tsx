@@ -57,15 +57,15 @@ const NewsColumn: React.FC<Props> = React.memo(({
         currentElement.style.display = 'block';
 
         const observer = new ResizeObserver((entries) => {
-          const {bottom, top} = entries[0].contentRect;
+          const {blockSize} = entries[0].borderBoxSize[0];
+          totalPositionElement += blockSize;
 
-          totalPositionElement += bottom - top;
           if (totalPositionElement > refColRight.current.parentNode.parentNode.clientHeight - 60) {
-          currentElement.style.display = 'none';
-        }
+            currentElement.style.display = 'none';
+          }
         });
         observer.observe(currentElement);
-  
+
         setTimeout(() => {
           observer.unobserve(currentElement);
         }, 0);
