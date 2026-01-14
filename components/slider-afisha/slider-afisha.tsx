@@ -40,7 +40,7 @@ const SliderAfisha: React.FC = React.memo(() => {
 
     setTimeout(() => {
       setRenderSlider(true);
-    }, 30);
+    }, 20);
   }, []);
 
   return (
