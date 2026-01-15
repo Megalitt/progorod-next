@@ -50,8 +50,32 @@ const NewsColumn: React.FC<Props> = React.memo(({
   }, []);
 
   const onHandleSetCountPosts = React.useCallback(() => {
+    console.log('refColRight.current', [...refColRight.current.children]);
+    
     if (refColRight.current) {
       let totalPositionElement = 0;
+      // const observer = new ResizeObserver((entries) => {
+      //   for (let i = 0; i < refColRight.current.children.length; i += 1) {
+      //     const currentElement = refColRight.current.children[i];
+      //     currentElement.style.display = 'block';
+
+          
+      //     const {blockSize} = entries[0].borderBoxSize[0];
+      //     totalPositionElement += blockSize;
+
+      //     const clientHeight = refColRight.current?.parentNode?.parentNode?.clientHeight;
+      //     if (clientHeight && totalPositionElement > refColRight.current.parentNode.parentNode.clientHeight - 60) {
+      //       currentElement.style.display = 'none';
+      //     }
+      //   }
+      // });
+      // [...refColRight.current.children].forEach((el) => observer.observe(el)) ;
+
+      // setTimeout(() => {
+      //   observer.disconnect();
+      // }, 0)
+      
+
       for (let i = 0; i < refColRight.current.children.length; i += 1) {
         const currentElement = refColRight.current.children[i];
         currentElement.style.display = 'block';
@@ -60,11 +84,16 @@ const NewsColumn: React.FC<Props> = React.memo(({
           const {blockSize} = entries[0].borderBoxSize[0];
           totalPositionElement += blockSize;
 
-          if (totalPositionElement > refColRight.current.parentNode.parentNode.clientHeight - 60) {
+          const clientHeight = refColRight.current?.parentNode?.parentNode?.clientHeight;
+          if (clientHeight && totalPositionElement > refColRight.current.parentNode.parentNode.clientHeight - 60) {
             currentElement.style.display = 'none';
           }
         });
         observer.observe(currentElement);
+
+        setTimeout(() => {
+          observer.disconnect();
+        }, 50)
       }
     }
     setLoaded(true);
@@ -88,13 +117,13 @@ const NewsColumn: React.FC<Props> = React.memo(({
         <h2 className={styles.nwsClnTitle}>{title}</h2>
         <ul className={styles.nwsClnContainer} ref={refColRight}>
           {
-              news.map((item, index) => (
-                <NewsColumnItem
-                  {...item}
-                  key={`newsColumn-${item.id}-${index * 3}`}
-                />
-              ))
-            }
+            news.map((item, index) => (
+              <NewsColumnItem
+                {...item}
+                key={`newsColumn-${item.id}-${index * 3}`}
+              />
+            ))
+          }
         </ul>
         {!isLoaded && <Loader />}
       </div>
