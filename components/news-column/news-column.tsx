@@ -65,6 +65,10 @@ const NewsColumn: React.FC<Props> = React.memo(({
           }
         });
         observer.observe(currentElement);
+
+        setTimeout(() => {
+          observer.disconnect();
+        }, 0);
       }
     }
     setLoaded(true);
