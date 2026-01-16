@@ -8,12 +8,15 @@
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 10px;
     overflow: hidden;
+    margin-top: auto;
+    height: 290px;
     
     @media screen and (max-width: $mobile-width){
         background-color: transparent;
         border-radius: 0;
         width: calc(100% - 24px);
         margin: 0 0 0 21px;
+        height: auto;
     }
 
     &Wrp {

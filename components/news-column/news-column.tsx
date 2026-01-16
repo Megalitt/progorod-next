@@ -78,26 +78,26 @@ const NewsColumn: React.FC<Props> = React.memo(({
   }, []);
 
   // const onHandleSetCountPosts = () => {
-  //   // if (!refColRight.current) return;
+  //   if (!refColRight.current) return;
   //   console.log('refColRight.current', refColRight.current);
+
   //   const observer = new IntersectionObserver(
   //     (entries) => {
+  //       console.log('запустился', entries);
   //       entries.forEach((entry, i) => {
-  //         console.log('запустился');
-
   //         if (entry.isIntersecting) {
   //           console.log(`Ребёнок ${i} В ЗОНЕ`);
-  //           entry.target.style.display = 'block';
+  //           refColRight.current.children[i].style.display = 'block';
   //         } else {
   //           console.log(`Ребёнок ${i} ВЫШЕЛ ЗА ГРАНИЦЫ`);
-  //           entry.target.style.display = 'none';
+  //           refColRight.current.children[i].style.display = 'none';
   //         }
   //       });
   //     },
   //     {
-  //       root: refColRight.current,     // Наблюдаем относительно родителя
-  //       rootMargin: '0px',         // Без отступов
-  //       threshold: 1,// Срабатывает на входе/выходе
+  //       root: refColRight.current, // Наблюдаем относительно родителя
+  //       rootMargin: '0px', // Без отступов
+  //       threshold: [0, 1], // Срабатывает на входе/выходе
   //     }
   //   );
 
@@ -108,9 +108,9 @@ const NewsColumn: React.FC<Props> = React.memo(({
   //     };
   //   });
 
-  //   setTimeout(() => {
-  //     observer.disconnect()
-  //   }, 30)
+  //   // setTimeout(() => {
+  //   //   observer.disconnect()
+  //   // }, 30)
 
   //   setLoaded(true);
   // };
