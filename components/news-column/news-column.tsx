@@ -49,33 +49,11 @@ const NewsColumn: React.FC<Props> = React.memo(({
     }
   }, []);
 
+
   const onHandleSetCountPosts = React.useCallback(() => {
-    console.log('refColRight.current', [...refColRight.current.children]);
-    
     if (refColRight.current) {
       let totalPositionElement = 0;
-      // const observer = new ResizeObserver((entries) => {
-      //   for (let i = 0; i < refColRight.current.children.length; i += 1) {
-      //     const currentElement = refColRight.current.children[i];
-      //     currentElement.style.display = 'block';
-
-          
-      //     const {blockSize} = entries[0].borderBoxSize[0];
-      //     totalPositionElement += blockSize;
-
-      //     const clientHeight = refColRight.current?.parentNode?.parentNode?.clientHeight;
-      //     if (clientHeight && totalPositionElement > refColRight.current.parentNode.parentNode.clientHeight - 60) {
-      //       currentElement.style.display = 'none';
-      //     }
-      //   }
-      // });
-      // [...refColRight.current.children].forEach((el) => observer.observe(el)) ;
-
-      // setTimeout(() => {
-      //   observer.disconnect();
-      // }, 0)
-      
-
+    
       for (let i = 0; i < refColRight.current.children.length; i += 1) {
         const currentElement = refColRight.current.children[i];
         currentElement.style.display = 'block';
@@ -92,12 +70,51 @@ const NewsColumn: React.FC<Props> = React.memo(({
         observer.observe(currentElement);
 
         setTimeout(() => {
-          observer.disconnect();
+          observer.unobserve(currentElement);
         }, 50)
       }
     }
     setLoaded(true);
   }, []);
+
+  // const onHandleSetCountPosts = () => {
+  //   // if (!refColRight.current) return;
+  //   console.log('refColRight.current', refColRight.current);
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry, i) => {
+  //         console.log('запустился');
+
+  //         if (entry.isIntersecting) {
+  //           console.log(`Ребёнок ${i} В ЗОНЕ`);
+  //           entry.target.style.display = 'block';
+  //         } else {
+  //           console.log(`Ребёнок ${i} ВЫШЕЛ ЗА ГРАНИЦЫ`);
+  //           entry.target.style.display = 'none';
+  //         }
+  //       });
+  //     },
+  //     {
+  //       root: refColRight.current,     // Наблюдаем относительно родителя
+  //       rootMargin: '0px',         // Без отступов
+  //       threshold: 1,// Срабатывает на входе/выходе
+  //     }
+  //   );
+
+  //   // Наблюдаем за всеми детьми
+  //   [...refColRight.current.children].forEach((ref) => {
+  //     if (ref) {
+  //       observer.observe(ref);
+  //     };
+  //   });
+
+  //   setTimeout(() => {
+  //     observer.disconnect()
+  //   }, 30)
+
+  //   setLoaded(true);
+  // };
+
 
   React.useEffect(() => {
     if (!isMobile) {
@@ -111,9 +128,10 @@ const NewsColumn: React.FC<Props> = React.memo(({
     return () => router.events.off('routeChangeStart', onHandleHideElements);
   }, [router, isMobile]);
 
+  
   return (
     <div className={styles.nwsCln}>
-      <div className={styles.nwsClnInner} style={{ height: columnHeight > 0 ? columnHeight : 'auto' }}>
+      <div className={styles.nwsClnInner}  style={{ height: '98vh' }}>
         <h2 className={styles.nwsClnTitle}>{title}</h2>
         <ul className={styles.nwsClnContainer} ref={refColRight}>
           {
