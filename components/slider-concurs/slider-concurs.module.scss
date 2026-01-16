@@ -3,14 +3,14 @@
 .concursSlider {
   display: flex;
   flex-direction: column;
-  flex-grow: 0;
+  flex-grow: 1;
   position: relative;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 10px;
   padding: 15px;
   overflow: hidden;
   margin-top: auto;
-  height: 290px;
+  max-height: 290px;
 
   @media screen and (max-width: $mobile-width) {
       padding: 0;
